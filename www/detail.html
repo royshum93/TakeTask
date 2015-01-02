@@ -1,0 +1,56 @@
+<ons-page ng-controller="showJobDetailController">
+      
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">{{current_job.jobTitle}}</div>
+        <div class="right">
+        <ons-toolbar-button><ons-icon icon="ion-share" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
+      
+
+ <ons-list-item amodifier="chevron">
+             
+              <input type="text" readonly class="text-input--transparent" value="Job Description">
+<br>
+                <textarea readonly class="textarea--transparent" rows="4" cols="35">
+                {{current_job.jobDescription}}
+                </textarea>
+             
+            </ons-list-item>
+			
+            
+            <ul class="list">
+              <li class="list__header">
+                Information
+              </li>
+                <ons-list-item amodifier="chevron">
+                <div class="prop-desc">
+               <ons-icon icon="ion-social-usd"></ons-icon> {{current_job.rewardPoint}} Points
+                </div>
+                 </ons-list-item>
+                 
+                  <ons-list-item amodifier="chevron">
+                <div class="prop-desc">
+               <ons-icon icon=" ion-ios7-alarm"></ons-icon> Before {{current_job.jobDeadline}}
+                </div>
+                 </ons-list-item>
+        
+                 
+            <ons-list-item modifier="chevron">
+              <div class="prop-desc" ng-click="gotoMap();">
+                <ons-icon icon="fa-map-marker"></ons-icon>
+                {{current_job.jobLocation}}
+              </div>
+            </ons-list-item>
+	</ul>
+  
+		<br/><br/>
+        <button class="button button--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">TAKETASK</button>
+        
+          </ons-list>
+
+    
+
+</ons-page>

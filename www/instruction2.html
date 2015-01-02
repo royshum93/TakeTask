@@ -1,0 +1,20 @@
+<ons-page ng-controller="submitJobController">
+  <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Step 2</div>
+          <div class="right"><ons-toolbar-button><ons-icon icon="ion-bookmark" ng-click="saveProgress()" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button></div>
+      </ons-toolbar>
+      <br>
+      <div class="center">
+          Second, please fill in the number shown in the price tag.
+          <br></br>
+          <input type="text" class="number" placeholder="price" ng-model="infotext">
+<br>
+      </div>
+      
+      <br/><br/>
+      <button style="position:absolute; bottom:0px" class="button button--large" ng-click="submitJob()">Submit</button>
+    
+
+    
+</ons-page>

@@ -1,0 +1,31 @@
+
+
+<ons-page ng-controller="JobListController">
+
+    <ons-toolbar>
+        <div class="center">TAKETASK</div>
+        <div class="right">
+			<ons-toolbar-button><ons-icon icon="ion-ios7-location" ng-click="appNavi.pushPage('mapView.html')" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+            <ons-toolbar-button><ons-icon icon="ion-search" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    
+    <ons-list>
+        <ons-list-item ng-repeat="job in joblist" modifier="chevron" class="list-item-container" ng-click="viewjob(job.jobID)" style="margin-top=4px">
+          <ons-row>
+            <ons-col>
+              <div class="name">
+                {{job.jobTitle}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> {{job.jobLocation}}
+              </div>
+              <div class="desc">
+                {{job.jobDescription}}
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+    </ons-list>
+</ons-page>

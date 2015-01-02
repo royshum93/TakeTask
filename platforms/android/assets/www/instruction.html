@@ -1,0 +1,25 @@
+
+<ons-page ng-controller="takePicJobController">
+  <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Step 1</div>
+        <div class="right"><ons-toolbar-button><ons-icon icon="ion-chevron-right" ng-click="appNavi.pushPage('instruction2.html', { animation : 'none' } );"></ons-icon></ons-toolbar-button></div>
+      </ons-toolbar>
+      <br>
+      <div class="center">
+          First, you need to take photo of the product with its pricetag.
+      </div>
+      <br></br>
+      
+      
+      
+      
+      <div id="previewImage" style="margin-left:auto; margin-right:auto; border:2px solid black; width:200px; height:200px; margin-top:50px; text-align:center">
+          Image Preview
+      </div>
+
+      <p style="text-align:center" id="previewImageSize"></p>
+	  
+      <button style="position:absolute; bottom:0px" class="button button--large" ng-click="takePic()">Take Photo</button>
+     
+</ons-page>
