@@ -2,10 +2,21 @@
 
 <ons-page ng-controller="MapViewController">
 
-	<ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Map View</div>
-      </ons-toolbar>
+	<div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
+    </span>
+  </div>
+ <div class="navigation-bar__right navigation-bar--android__right">
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-list" style="font-size:20px;" ng-click="appNavi.pushPage('tabBar.html')"></i>
+    </span>
+  </div>
+</div>
 	  
 	  <div style="height: 100%;width: 100%;" id="mapDiv"></div>
 

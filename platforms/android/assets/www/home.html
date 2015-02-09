@@ -1,8 +1,4 @@
-
-
 <ons-page ng-controller="JobListController">
-
-  
     <div class="navigation-bar navigation-bar--android">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
@@ -14,18 +10,11 @@
   </div>
  <div class="navigation-bar__right navigation-bar--android__right">
     <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-android-location" style="font-size:20px;" ng-click="appNavi.pushPage('mapView.html')"></i>
-    </span>
-    <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-android-search" style="font-size:20px;"></i>
-    </span>
-    <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-android-more" style="font-size:20px" ng-click="appNavi.pushPage('setting/setting.html');"></i>
+      <i class="ion-map" style="font-size:20px;" ng-click="appNavi.pushPage('mapView.html')"></i>
     </span>
   </div>
 </div>
-
-    
+  
 
         <ons-list class="plan-list">
           <ons-list-item modifier="chevron" class="plan" ng-repeat="job in joblist" class="list-item-container" ng-click="viewjob(job.jobID)">
@@ -47,10 +36,8 @@
               </ons-col>
             </ons-row>
           </ons-list-item>
-
         </ons-list>
 
-
-
-      </ons-page>
 </ons-page>
+
+

@@ -5,7 +5,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   
-  <title>My App</title>  
+  <title>TakeTask</title>  
   
   <link rel="stylesheet" href="css/style.css"/>
   
@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">  
   <link rel="stylesheet" href="lib/onsen/css/font_awesome/css/font-awesome.min.css">  
   <link rel="stylesheet" href="styles/app.css"/>
+  <link rel="stylesheet" href="lib/ionic/css/ionic.css"> 
+  <link rel="stylesheet" href="lib/ionic/css/ionic.min.css"> 
+  
   
   
   <script src="lib/onsen/js/angular/angular.js"></script>    
@@ -20,6 +23,11 @@
   
   <script src="cordova.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/map2.js"></script>
+  <script src="js/markerwithlabel_packed.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
   
 </head>
 
@@ -28,22 +36,22 @@
 
 <ons-tabbar var="tabbar">
         <ons-tabbar-item
-            icon="home"
+            icon="ion-home"
             label="Home"
             page="home.html"
             active="true"></ons-tabbar-item>
         <ons-tabbar-item
-            icon="ion-bookmark"
-            label="Bookmark"
+            icon="ion-flag"
+            label="My Task"
             page="bookmark.html"></ons-tabbar-item>
         <ons-tabbar-item
-            icon="ion-person"
-            label="Profile"
+            icon="ion-ribbon-a"
+            label="Achievement"
             page="profiles/profiles.html"></ons-tabbar-item>
         <ons-tabbar-item
-            icon="fa-gear"
-            label="Friends"
-			page="fds.html"></ons-tabbar-item>
+            icon="ion-gear-a"
+            label="Setting"
+			page="setting/setting.html"></ons-tabbar-item>
             
 </ons-tabbar>
 
