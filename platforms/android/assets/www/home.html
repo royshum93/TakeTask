@@ -2,30 +2,55 @@
 
 <ons-page ng-controller="JobListController">
 
-    <ons-toolbar>
-        <div class="center">TAKETASK</div>
-        <div class="right">
-			<ons-toolbar-button><ons-icon icon="ion-ios7-location" ng-click="appNavi.pushPage('mapView.html')" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
-            <ons-toolbar-button><ons-icon icon="ion-search" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
-        </div>
-    </ons-toolbar>
+  
+    <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
+    </span>
+  </div>
+ <div class="navigation-bar__right navigation-bar--android__right">
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-location" style="font-size:20px;" ng-click="appNavi.pushPage('mapView.html')"></i>
+    </span>
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-search" style="font-size:20px;"></i>
+    </span>
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-more" style="font-size:20px" ng-click="appNavi.pushPage('setting/setting.html');"></i>
+    </span>
+  </div>
+</div>
+
     
-    <ons-list>
-        <ons-list-item ng-repeat="job in joblist" modifier="chevron" class="list-item-container" ng-click="viewjob(job.jobID)" style="margin-top=4px">
-          <ons-row>
-            <ons-col>
-              <div class="name">
-                {{job.jobTitle}}
-              </div>
-              <div class="location">
+
+        <ons-list class="plan-list">
+          <ons-list-item modifier="chevron" class="plan" ng-repeat="job in joblist" class="list-item-container" ng-click="viewjob(job.jobID)">
+            <ons-row>
+
+              <ons-col width="6px" class="plan-center">
+              </ons-col>
+
+              <ons-col class="plan-right">
+                <div class="plan-name">{{job.jobTitle}}</div>
+
+               <div class="location">
                 <i class="fa fa-map-marker"></i> {{job.jobLocation}}
               </div>
               <div class="desc">
                 {{job.jobDescription}}
               </div>
-            </ons-col>
-            <ons-col width="40px"></ons-col>
-          </ons-row>
-        </ons-list-item>
-    </ons-list>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+
+        </ons-list>
+
+
+
+      </ons-page>
 </ons-page>
