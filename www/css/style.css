@@ -32,14 +32,6 @@
 
 /* detail.css */
 
-.card {
-  background-color: white;
-  background-image: url(pics/taketasklogo.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  height: 250px;
-}
 
 .card-toolbar ons-back-button span {
   color: white;
@@ -2387,4 +2379,64 @@ input[type=password] {
     background-image: -o-linear-gradient(90deg, #ddd, #ddd 50%, transparent 50%);
     background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
   }
+}
+
+/*dialog*/
+
+ons-dialog p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  width: 100%;
+}
+
+/*form icon*/
+.text-input--lock{
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  border: none;
+  line-height: normal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #1f1f21;
+  padding: 4px 0px 0 28px;
+  margin: 0;
+  font-size: 15px;
+  height: 31px;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  background-image: url('pics/image.png');
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 17px;
+  background-size: 17px;
+  background-color: transparent;
+  border-bottom: 1px solid #ddd;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
 }

@@ -12,31 +12,26 @@
     <span class="toolbar-button--quiet navigation-bar__line-height">
       <i class="ion-map" style="font-size:20px;" ng-click="appNavi.pushPage('mapView.html')"></i>
     </span>
+	<span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-refresh" style="font-size:20px;" ng-click="appNavi.refreshpage()"></i>
+    </span>
   </div>
 </div>
-  
 
-        <ons-list class="plan-list">
-          <ons-list-item modifier="chevron" class="plan" ng-repeat="job in joblist" class="list-item-container" ng-click="viewjob(job.jobID)">
-            <ons-row>
 
-              <ons-col width="6px" class="plan-center">
-              </ons-col>
 
-              <ons-col class="plan-right">
-                <div class="plan-name">{{job.jobTitle}}</div>
+  <div class="card" ng-click="viewjob(job.jobID)" ng-repeat="job in joblist">
+  <div class="item item-divider">
+    <h2>{{job.jobTitle}}</h2>
+  </div>
+  <div class="item item-text-wrap">
+    {{job.jobDescription}}
+  </div>
+  <div class="item item-divider">
+   <i class="icon ion-location"></i>{{job.jobLocation}}
+  </div>
+</div>
 
-               <div class="location">
-                <i class="fa fa-map-marker"></i> {{job.jobLocation}}
-              </div>
-              <div class="desc">
-                {{job.jobDescription}}
-              </div>
-                </div>
-              </ons-col>
-            </ons-row>
-          </ons-list-item>
-        </ons-list>
 
 </ons-page>
 

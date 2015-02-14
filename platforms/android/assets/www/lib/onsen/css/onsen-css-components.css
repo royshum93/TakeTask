@@ -207,7 +207,7 @@ h6 {
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
 }
 .switch__input:checked + .switch__toggle {
-  background-color: #ff3030;
+  background-color: #ED5565;
 }
 .switch__input:checked + .switch__toggle:before {
   -webkit-transform: translateX(18px);
@@ -393,7 +393,7 @@ h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #ff3030;
+  background: #ED5565;
   color: #fff;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -422,7 +422,7 @@ h6 {
   padding-top: 0;
 }
 .navigation-bar__bg {
-  background: #ff3030;
+  background: #ED5565;
 }
 .navigation-bar__item,
 .navigation-bar__left,
@@ -697,7 +697,7 @@ h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #ff3030;
+  background: #ED5565;
   color: #fff;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1335,15 +1335,15 @@ h6 {
   appearance: none;
 }
 .button-bar__item:first-child > .button-bar__button {
-  border-left: 1px solid #ff3030;
-  border-right: 1px solid #ff3030;
+  border-left: 1px solid #ED5565;
+  border-right: 1px solid #ED5565;
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 .button-bar__item:last-child > .button-bar__button {
-  border-right: 1px solid #ff3030;
+  border-right: 1px solid #ED5565;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -1358,11 +1358,11 @@ h6 {
   -webkit-border-radius: inherit;
   border-radius: inherit;
   background-color: transparent;
-  color: #ff3030;
-  border: 0px solid #ff3030;
-  border-top: 1px solid #ff3030;
-  border-bottom: 1px solid #ff3030;
-  border-right: 1px solid #ff3030;
+  color: #ED5565;
+  border: 0px solid #ED5565;
+  border-top: 1px solid #ED5565;
+  border-bottom: 1px solid #ED5565;
+  border-right: 1px solid #ED5565;
   font-weight: 400;
   padding: 0 8px;
   height: 27px;
@@ -1380,10 +1380,10 @@ h6 {
 .button-bar__button:active,
 :active + .button-bar__button {
   background-color: rgba(255,48,48,0.2);
-  border: 0px solid #ff3030;
-  border-top: 1px solid #ff3030;
-  border-bottom: 1px solid #ff3030;
-  border-right: 1px solid #ff3030;
+  border: 0px solid #ED5565;
+  border-top: 1px solid #ED5565;
+  border-bottom: 1px solid #ED5565;
+  border-right: 1px solid #ED5565;
   height: 27px;
   line-height: 27px;
   font-size: 13px;
@@ -1395,7 +1395,7 @@ h6 {
 }
 .button-bar__item.active > .button-bar__button,
 :checked + .button-bar__button {
-  background-color: #ff3030;
+  background-color: #ED5565;
   color: #fff;
   -webkit-transition: none;
   -moz-transition: none;
@@ -1645,14 +1645,14 @@ h6 {
   color: #ccc;
 }
 :checked + .tab-bar__button {
-  color: #ff3030;
+  color: #ED5565;
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-top: none;
 }
 :checked + .tab-bar__button > .tab-bar__icon {
-  color: #ff3030;
+  color: #ED5565;
 }
 .tab-bar__button:disabled {
   opacity: 0.3;
@@ -1811,7 +1811,7 @@ h6 {
 }
 :checked + .tab-bar--top-border__button {
   background-color: transparent;
-  border-bottom: 4px solid #ff3030;
+  border-bottom: 4px solid #ED5565;
 }
 /* topdoc
   name: Notification
@@ -1856,7 +1856,7 @@ h6 {
   height: 19px;
   -webkit-border-radius: 19px;
   border-radius: 19px;
-  background-color: #ff3030;
+  background-color: #ED5565;
   color: #fff;
   text-align: center;
   font-size: 16px;
@@ -2032,11 +2032,11 @@ h6 {
   width: 0;
 }
 .checkbox > input[type="checkbox"]:checked {
-  background: #ff3030;
+  background: #ED5565;
 }
 .checkbox > input[type="checkbox"]:checked + .checkbox__checkmark:before {
   background: #ff0026;
-  border: 1px solid #ff3030;
+  border: 1px solid #ED5565;
 }
 .checkbox > input[type="checkbox"]:checked + .checkbox__checkmark:after {
   opacity: 1;
@@ -2261,7 +2261,7 @@ h6 {
   width: 12px;
   height: 6px;
   background: transparent;
-  border: 3px solid #ff3030;
+  border: 3px solid #ED5565;
   border-width: 2px;
   border-top: none;
   border-right: none;
@@ -3491,7 +3491,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   height: 44px;
   line-height: 44px;
   outline: none;
-  color: #ff3030;
+  color: #ED5565;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .alert-dialog-button {

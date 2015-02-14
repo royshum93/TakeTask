@@ -1,20 +1,25 @@
 <ons-page>
-      <ons-toolbar>
-    
-        <div class="center">Settings</div>
-      </ons-toolbar>
-
+      <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
+    </span>
+  </div>
+</div>
 
       <div class="settings-header">Notification</div>
 
       <ons-list modifier="inset" class="settings-list">
         <ons-list-item>
-          Bookmarked task alarm
+          Task Due Reminder
           <ons-switch modifier="list-item"></ons-switch>
         </ons-list-item>
 
         <ons-list-item>
-          Recommended task
+          Recommended Task
           <ons-switch modifier="list-item" checked></ons-switch>
         </ons-list-item>
       </ons-list>
@@ -23,12 +28,12 @@
 
       <ons-list modifier="inset" class="settings-list">
         <ons-list-item>
-          Auto WiFi Upload
+          Only WiFi Transmission
           <ons-switch modifier="list-item"></ons-switch>
         </ons-list-item>
 
         <ons-list-item>
-          Auto 2G/3G/4G Upload
+          Allow GPS
           <ons-switch modifier="list-item" checked></ons-switch>
         </ons-list-item>
       </ons-list>
@@ -48,11 +53,7 @@
 
       <ons-list modifier="inset" class="settings-list">
         <ons-list-item modifier="chevron">
-          Terms of Use
-        </ons-list-item>
-
-        <ons-list-item modifier="chevron">
-          Privacy Policy
+          Terms and Privacy
         </ons-list-item>
       </ons-list>
 

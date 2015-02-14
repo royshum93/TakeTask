@@ -93,7 +93,7 @@ function JobListController($scope, $http, $window){
         //for testing
         //localStorage.setItem("userToken","db137ccbcc1a2261f78ae917ee270dbf");
     };
-	
+
 	
     $scope.refresh = refreshpage;
     
