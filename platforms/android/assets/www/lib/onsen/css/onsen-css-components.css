@@ -802,7 +802,7 @@ h6 {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #ff0026;
+  background-color: #ED5565;
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -818,7 +818,7 @@ h6 {
   transition: none;
 }
 .button:active {
-  background-color: #ff0026;
+  background-color: #ED5565;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -844,17 +844,17 @@ h6 {
 */
 .button--outline {
   background-color: transparent;
-  border: 1px solid #ff0026;
+  border: 1px solid #ED5565;
   color: #ff0026;
 }
 .button--outline:active {
   background-color: rgba(255,0,38,0.2);
-  border: 1px solid #ff0026;
+  border: 1px solid #ED5565;
   color: #ff0026;
   opacity: 1;
 }
 .button--outline:hover {
-  border: 1px solid #ff0026;
+  border: 1px solid #ED5565;
   -webkit-transition: 0;
   -moz-transition: 0;
   -o-transition: 0;

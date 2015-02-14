@@ -910,183 +910,6 @@ input[type=password] {
   padding-left: 6px;
   padding-right: 6px;
 }
-/*tab-bar*/
-
-
-.tab-bar {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  display: table;
-  table-layout: fixed;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
-  height: 49px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-  width: 100%;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .tab-bar {
-    border-top: none;
-    -webkit-background-size: 100% 1px;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-image: -webkit-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
-    background-image: -moz-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
-    background-image: -o-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
-    background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
-  }
-}
-.tab-bar__item {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  position: relative;
-  overflow: hidden;
-  display: table-cell;
-  width: auto;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-.tab-bar__item > input {
-  position: absolute;
-  overflow: hidden;
-  right: 0px;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  padding: 0;
-  border: 0;
-  opacity: 0.001;
-  z-index: 1;
-  vertical-align: top;
-  outline: none;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.tab-bar__button {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: none;
-  line-height: normal;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-decoration: none;
-  padding: 0;
-  height: 49px;
-  letter-spacing: 0;
-  color: #ccc;
-  text-shadow: 0 1px none;
-  vertical-align: top;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-top: none;
-  width: 100%;
-  font-weight: 400;
-  line-height: 49px;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .tab-bar__button {
-    border-top: none;
-  }
-}
-.tab-bar__icon {
-  font-size: 24px;
-  padding: 0;
-  margin: 0;
-  line-height: 32px;
-  display: block;
-  height: 32px;
-}
-.tab-bar__label {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-}
-.tab-bar__icon + .tab-bar__label {
-  font-size: 10px;
-  line-height: 1;
-  margin: 0;
-  font-weight: 400;
-}
-.tab-bar__label:first-child {
-  font-size: 16px;
-  line-height: 49px;
-  margin: 0;
-  padding: 0;
-}
-.tab-bar__button {
-  color: #ccc;
-}
-:checked + .tab-bar__button {
-  color: #ED5565;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-top: none;
-}
-:checked + .tab-bar__button > .tab-bar__icon {
-  color: #ED5565;
-}
-.tab-bar__button:disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-.tab-bar__button:focus {
-  z-index: 1;
-  border-top: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: 0;
-}
-.tab-bar__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 49px;
-  z-index: 0;
-}
 
 /*switch*/
 .switch {
@@ -2048,7 +1871,7 @@ input[type=password] {
   letter-spacing: 0;
   color: #fff;
   vertical-align: middle;
-  background-color: #ED5565;
+  background-color: #da4453;
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -2064,7 +1887,7 @@ input[type=password] {
   transition: none;
 }
 .button:active {
-  background-color: #ED5565;
+  background-color: #da4453;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -2090,7 +1913,7 @@ input[type=password] {
   text-align: center;
 }
 .button--large:active {
-  background-color: #ED5565;
+  background-color: #da4453;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -2116,172 +1939,6 @@ input[type=password] {
 .button--large:focus {
   outline: 0;
 }
-
-.button--quiet {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: none;
-  line-height: normal;
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  height: auto;
-  text-decoration: none;
-  padding: 4px 10px;
-  font-size: 17px;
-  line-height: 32px;
-  letter-spacing: 0;
-  color: #fff;
-  vertical-align: middle;
-  background-color: #ED5565;
-  border: 0px solid currentColor;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-  background: transparent;
-  border: 1px solid transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background: transparent;
-  color: #ED5565;
-  border: none;
-}
-.button--quiet:disabled,
-.button--quiet[disabled] {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-  border: none;
-}
-.button--quiet:hover {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-.button--quiet:focus {
-  outline: 0;
-}
-.button--quiet:active {
-  background-color: transparent;
-  border: none;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-  opacity: 0.2;
-  color: #ED5565;
-}
-
-.button--large--cta {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: none;
-  line-height: normal;
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  height: auto;
-  text-decoration: none;
-  padding: 4px 10px;
-  font-size: 17px;
-  line-height: 32px;
-  letter-spacing: 0;
-  color: #fff;
-  vertical-align: middle;
-  background-color: #ED5565;
-  border: 0px solid currentColor;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-  border: none;
-  background-color: #da4453;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 36px;
-  padding: 4px 12px;
-  width: 100%;
-  text-align: center;
-  display: block;
-}
-.button--large--cta:hover {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-.button--large--cta:focus {
-  outline: 0;
-}
-.button--large--cta:active {
-  color: #fff;
-  background-color: #da4453;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-  opacity: 0.2;
-}
-.button--large--cta:disabled,
-.button--large--cta[disabled] {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-.button--outline {
-  background-color: transparent;
-  border: 1px solid #ED5565;
-  color: #ED5565;
 }
 
 /*fds.css*/
@@ -2440,3 +2097,57 @@ input {
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
+/**
+ * Cards and Inset Lists
+ * --------------------------------------------------
+ * A card and list-inset are close to the same thing, except a card as a box shadow.
+ */
+.card, .list-inset {
+  overflow: hidden;
+  margin: 20px 10px;
+  border-radius: 2px;
+  background-color: #fff; }
+
+.card {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .card .item {
+    border-left: 0;
+    border-right: 0; }
+  .card .item:first-child {
+    border-top: 0; }
+  .card .item:last-child {
+    border-bottom: 0; }
+
+.padding .card, .padding .list-inset {
+  margin-left: 0;
+  margin-right: 0; }
+
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px; }
+  .card .item:first-child .item-content, .list-inset .item:first-child .item-content, .padding > .list .item:first-child .item-content {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; }
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px; }
+  .card .item:last-child .item-content, .list-inset .item:last-child .item-content, .padding > .list .item:last-child .item-content {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px; }
+
+.card .item:last-child, .list-inset .item:last-child {
+  margin-bottom: -1px; }
+
+.card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+  margin-right: 0;
+  margin-left: 0; }
+  .card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+    padding-right: 44px; }
+
+.padding-left > .list .item {
+  margin-left: 0; }
+
+.padding-right > .list .item {
+  margin-right: 0; }

@@ -1,12 +1,14 @@
 <ons-page ng-controller="showJobDetailController">
-      
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">{{current_job.jobTitle}}</div>
-        <div class="right">
-        <ons-toolbar-button><ons-icon icon="ion-share" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
-        </div>
-      </ons-toolbar>
+      <div class="navigation-bar navigation-bar--android">
+		  <div class="navigation-bar__left navigation-bar--android__left">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+		  </div>
+		  <div class="navigation-bar__center navigation-bar--android__center">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
+			  <i class="ion-ios-arrow-back" style="font-size:20px;" ng-click="appNavi.pushPage('tabBar.html')".></i> {{current_job.jobTitle}}
+			</span>
+		  </div>
+		</div>
 
       
 
@@ -45,12 +47,9 @@
               </div>
             </ons-list-item>
 	</ul>
-  
-		<br/><br/>
-        <button class="button button--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">TAKETASK</button>
-        
-          </ons-list>
+  </ons-list>
 
     
+  <button class="button button--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">TAKETASK</button>
 
 </ons-page>
