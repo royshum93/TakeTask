@@ -666,7 +666,7 @@ h6 {
       <div class="bottom-bar__line-height" style="text-align:center">Bottom Toolbar</div>
     </div>
 */
-.bottom-bar {
+.onsbottom-bar {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -710,7 +710,7 @@ h6 {
   left: 0px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .bottom-bar {
+  .onsbottom-bar {
     border-top: none;
     -webkit-background-size: 100% 1px;
     background-size: 100% 1px;
@@ -722,12 +722,12 @@ h6 {
     background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
   }
 }
-.bottom-bar__line-height {
+.onsbottom-bar__line-height {
   line-height: 44px;
   padding-bottom: 0;
   padding-top: 0;
 }
-.bottom-bar--transparent {
+.onsbottom-bar--transparent {
   background-color: transparent;
   background-image: none;
   border: none;
@@ -765,7 +765,7 @@ h6 {
     <button class="button">Button</button>
     <button class="button" disabled>Button</button>
 */
-.button {
+.onsbutton {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -811,13 +811,13 @@ h6 {
   -o-transition: none;
   transition: none;
 }
-.button:hover {
+.onsbutton:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button:active {
+.onsbutton:active {
   background-color: #ED5565;
   -webkit-transition: none;
   -moz-transition: none;
@@ -825,11 +825,11 @@ h6 {
   transition: none;
   opacity: 0.2;
 }
-.button:focus {
+.onsbutton:focus {
   outline: 0;
 }
-.button:disabled,
-.button[disabled] {
+.onsbutton:disabled,
+.onsbutton[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
@@ -842,18 +842,18 @@ h6 {
     <button class="button button--outline">Button</button>
     <button class="button button--outline" disabled>Button</button>
 */
-.button--outline {
+.onsbutton--outline {
   background-color: transparent;
   border: 1px solid #ED5565;
   color: #ff0026;
 }
-.button--outline:active {
+.onsbutton--outline:active {
   background-color: rgba(255,0,38,0.2);
   border: 1px solid #ED5565;
   color: #ff0026;
   opacity: 1;
 }
-.button--outline:hover {
+.onsbutton--outline:hover {
   border: 1px solid #ED5565;
   -webkit-transition: 0;
   -moz-transition: 0;
@@ -868,12 +868,12 @@ h6 {
     <button class="button button--light">Button</button>
     <button class="button button--light" disabled>Button</button>
 */
-.button--light {
+.onsbutton--light {
   background-color: transparent;
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
 }
-.button--light:active {
+.onsbutton--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
@@ -886,7 +886,7 @@ h6 {
     <button class="button--quiet">Button</button>
     <button class="button--quiet" disabled>Button</button>
 */
-.button--quiet {
+.onsbutton--quiet {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -939,23 +939,23 @@ h6 {
   color: #ff0026;
   border: none;
 }
-.button--quiet:disabled,
-.button--quiet[disabled] {
+.onsbutton--quiet:disabled,
+.onsbutton--quiet[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
   border: none;
 }
-.button--quiet:hover {
+.onsbutton--quiet:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--quiet:focus {
+.onsbutton--quiet:focus {
   outline: 0;
 }
-.button--quiet:active {
+.onsbutton--quiet:active {
   background-color: transparent;
   border: none;
   -webkit-transition: none;
@@ -972,7 +972,7 @@ h6 {
     <button class="button--cta">Button</button>
     <button class="button--cta" disabled>Button</button>
 */
-.button--cta {
+.onsbutton--cta {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -1021,16 +1021,16 @@ h6 {
   background-color: #9e1609;
   color: #fff;
 }
-.button--cta:hover {
+.onsbutton--cta:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--cta:focus {
+.onsbutton--cta:focus {
   outline: 0;
 }
-.button--cta:active {
+.onsbutton--cta:active {
   color: var-button-cat-color;
   background-color: #9e1609;
   -webkit-transition: none;
@@ -1039,8 +1039,8 @@ h6 {
   transition: none;
   opacity: 0.2;
 }
-.button--cta:disabled,
-.button--cta[disabled] {
+.onsbutton--cta:disabled,
+.onsbutton--cta[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
@@ -1052,7 +1052,7 @@ h6 {
   markup:
     <button class="button button--large">Button</button>
 */
-.button--large {
+.onsbutton--large {
   font-size: 17px;
   font-weight: 500;
   line-height: 36px;
@@ -1061,7 +1061,7 @@ h6 {
   width: 100%;
   text-align: center;
 }
-.button--large:active {
+.onsbutton--large:active {
   background-color: #ff0026;
   -webkit-transition: none;
   -moz-transition: none;
@@ -1073,19 +1073,19 @@ h6 {
   -o-transition: none;
   transition: none;
 }
-.button--large:disabled,
-.button--large[disabled] {
+.onsbutton--large:disabled,
+.onsbutton--large[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-.button--large:hover {
+.onsbutton--large:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--large:focus {
+.onsbutton--large:focus {
   outline: 0;
 }
 /* topdoc
@@ -1094,7 +1094,7 @@ h6 {
   markup:
     <button class="button--large--quiet">Button</button>
 */
-.button--large--quiet {
+.onsbutton--large--quiet {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -1152,7 +1152,7 @@ h6 {
   color: #ff0026;
   text-align: center;
 }
-.button--large--quiet:active {
+.onsbutton--large--quiet:active {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1164,19 +1164,19 @@ h6 {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.button--large--quiet:disabled,
-.button--large--quiet[disabled] {
+.onsbutton--large--quiet:disabled,
+.onsbutton--large--quiet[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-.button--large--quiet:hover {
+.onsbutton--large--quiet:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--large--quiet:focus {
+.onsbutton--large--quiet:focus {
   outline: 0;
 }
 /* topdoc
@@ -1185,7 +1185,7 @@ h6 {
   markup:
     <button class="button--large--cta" >Button</button>
 */
-.button--large--cta {
+.onsbutton--large--cta {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -1241,16 +1241,16 @@ h6 {
   text-align: center;
   display: block;
 }
-.button--large--cta:hover {
+.onsbutton--large--cta:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button--large--cta:focus {
+.onsbutton--large--cta:focus {
   outline: 0;
 }
-.button--large--cta:active {
+.onsbutton--large--cta:active {
   color: #fff;
   background-color: #9e1609;
   -webkit-transition: none;
@@ -1259,8 +1259,8 @@ h6 {
   transition: none;
   opacity: 0.2;
 }
-.button--large--cta:disabled,
-.button--large--cta[disabled] {
+.onsbutton--large--cta:disabled,
+.onsbutton--large--cta[disabled] {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
@@ -1283,7 +1283,7 @@ h6 {
       </div>
     </div>
 */
-.button-bar {
+.onsbutton-bar {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1298,7 +1298,7 @@ h6 {
   margin: 0;
   border: none;
 }
-.button-bar__item {
+.onsbutton-bar__item {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1315,7 +1315,7 @@ h6 {
   position: relative;
   overflow: hidden;
 }
-.button-bar__item > input {
+.onsbutton-bar__item > input {
   position: absolute;
   overflow: hidden;
   right: 0px;
@@ -1334,7 +1334,7 @@ h6 {
   -webkit-appearance: none;
   appearance: none;
 }
-.button-bar__item:first-child > .button-bar__button {
+.onsbutton-bar__item:first-child > .onsbutton-bar__button {
   border-left: 1px solid #ED5565;
   border-right: 1px solid #ED5565;
   -webkit-border-top-left-radius: 4px;
@@ -1342,14 +1342,14 @@ h6 {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.button-bar__item:last-child > .button-bar__button {
+.onsbutton-bar__item:last-child > .onsbutton-bar__button {
   border-right: 1px solid #ED5565;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.button-bar__button {
+.onsbutton-bar__button {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1377,8 +1377,8 @@ h6 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.button-bar__button:active,
-:active + .button-bar__button {
+.onsbutton-bar__button:active,
+:active + .onsbutton-bar__button {
   background-color: rgba(255,48,48,0.2);
   border: 0px solid #ED5565;
   border-top: 1px solid #ED5565;
@@ -1393,8 +1393,8 @@ h6 {
   -o-transition: none;
   transition: none;
 }
-.button-bar__item.active > .button-bar__button,
-:checked + .button-bar__button {
+.onsbutton-bar__item.active > .onsbutton-bar__button,
+:checked + .onsbutton-bar__button {
   background-color: #ED5565;
   color: #fff;
   -webkit-transition: none;
@@ -1402,18 +1402,18 @@ h6 {
   -o-transition: none;
   transition: none;
 }
-.button-bar__button:disabled {
+.onsbutton-bar__button:disabled {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-.button-bar__button:hover {
+.onsbutton-bar__button:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none;
 }
-.button-bar__button:focus {
+.onsbutton-bar__button:focus {
   outline: 0;
 }
 /* topdoc
