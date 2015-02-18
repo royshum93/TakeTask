@@ -5,49 +5,49 @@
 		  </div>
 		  <div class="navigation-bar__center navigation-bar--android__center">
 			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
-			  <i class="ion-ios-arrow-back" style="font-size:20px;" ng-click="appNavi.pushPage('tabBar.html')".></i> {{current_job.jobTitle}}
+			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('tabBar.html')".></i> {{current_job.jobTitle}}
 			</span>
 		  </div>
 		</div>
 
       
+<div class="list card">
 
- <ons-list-item amodifier="chevron">
-             
-              <input type="text" readonly class="text-input--transparent" value="Job Description">
-<br>
-                <textarea readonly class="textarea--transparent" rows="4" cols="35">
-                {{current_job.jobDescription}}
-                </textarea>
-             
-            </ons-list-item>
-			
-            
-            <ul class="list">
-              <li class="list__header">
-                Information
-              </li>
-                <ons-list-item amodifier="chevron">
-                <div class="prop-desc">
-               <ons-icon icon="ion-social-usd"></ons-icon> {{current_job.rewardPoint}} Points
-                </div>
-                 </ons-list-item>
-                 
-                  <ons-list-item amodifier="chevron">
-                <div class="prop-desc">
-               <ons-icon icon=" ion-ios7-alarm"></ons-icon> Before {{current_job.jobDeadline}}
-                </div>
-                 </ons-list-item>
-        
-                 
-            <ons-list-item modifier="chevron">
-              <div class="prop-desc" ng-click="gotoMap();">
-                <ons-icon icon="fa-map-marker"></ons-icon>
-                {{current_job.jobLocation}}
-              </div>
-            </ons-list-item>
-	</ul>
-  </ons-list>
+  <div class="item item-avatar">
+    <img src="mcfly.jpg">
+    <h2>{{current_job.jobTitle}}</h2>
+    <p>Start: January 05, 2015</p>
+	<p>End: {{current_job.jobDeadline}}</p>
+  </div>
+
+  <div class="item item-body">
+  <h3>Task Description</h3>
+    <p>
+      {{current_job.jobDescription}}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-social-usd"></i>
+      HKD {{current_job.rewardPoint}}
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-ios-location"></i>
+      {{current_job.jobLocation}}
+    </a>
+  </div>
+
+</div>
+
 
     
   <button class="button button--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">TAKETASK</button>

@@ -1,10 +1,27 @@
 <ons-page ng-controller="submitJobController">
-  <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Step 2</div>
-          <div class="right"><ons-toolbar-button><ons-icon icon="ion-bookmark" ng-click="saveProgress()" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button></div>
-      </ons-toolbar>
-      <br>
+  <div class="navigation-bar navigation-bar--android">
+		  <div class="navigation-bar__left navigation-bar--android__left">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+		  </div>
+		  <div class="navigation-bar__center navigation-bar--android__center">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
+			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('instruction.html')".></i> Step 1
+			</span>
+		  </div>
+		</div>
+      
+	  
+	  <div class="list list-inset">
+		  <label class="item item-input">
+			<input type="text" placeholder="First Name">
+		  </label>
+		  <label class="item item-input">
+			<input type="text" placeholder="Last Name">
+		  </label>
+		</div>
+	  
+	  
+	  
       <div class="center">
           Second, please fill in the number shown in the price tag.
           <br></br>
