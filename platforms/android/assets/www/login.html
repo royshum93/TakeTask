@@ -1,17 +1,9 @@
 
    <ons-page ng-controller="LoginController">
-      <div class="navigation-bar navigation-bar--android">
-  <div class="navigation-bar__left navigation-bar--android__left">
-    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
-  </div>
-  <div class="navigation-bar__center navigation-bar--android__center">
-    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
-      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
-    </span>
-  </div>
-</div>
+   <div class="onspage__background">
+
         <div class="logo">
-            <img src="pics/taketasklogo.fw.png"/>
+            
         </div>
 
       <div class="login-form">
@@ -28,11 +20,13 @@
 	  </label>
 	</div>
        
-        <button class="onsbutton onsbutton--large" ng-click="login(user,pass)">Log In</button>
+        <button class="logonsbutton logonsbutton--large" ng-click="login(user,pass)">Log In</button>
         <br>
-        <button class="onsbutton onsbutton--outline" onclick="loginRedirects.pushPage('signup.html', {animation:'slide'} )">Sign Up</button>
+        <button class="logonsbutton logonsbutton--outline" onclick="loginRedirects.pushPage('signup.html', {animation:'slide'} )">Sign Up</button>
          <br>
-         <button class="onsbutton--quiet" onclick="appNavi.pushPage('forgotpw.html', {animation:'slide'} )">Forgot password?</button>
+         <button class="logonsbutton--quiet" onclick="appNavi.pushPage('forgotpw.html', {animation:'slide'} )">Forgot password?</button>
       </div>
+	  </div>
 
     </ons-page>
+	

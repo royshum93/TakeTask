@@ -1,123 +1,258 @@
-/* list_thumbnails.css */
-
-.list-item-container {
-  line-height: 1;
-  padding: 15px 0px 15px 15px;
+.onspage__background {
+  background-color: #ED5565;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.thumbnail {
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-}
-
-.name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-
-.location {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-bottom: 6px;
-}
-
-.desc {
-  line-height: 1.2;
-  font-size: 13px;
-}
-
-/* detail.css */
-
-
-.card-toolbar ons-back-button span {
-  color: white;
-}
-
-.card-name {
-  font-weight: 600;
-  font-size: 20px;
-  padding: 66px 0 8px 0;
-  text-align: center;
-}
-
-.card-desc {
-  font-size: 14px;
-  font-weight: 400;
-  opacity:1;
-  text-align:center;
-  line-height: 1.4;
-}
-
-.rating {
-  text-align: center;
+/* topdoc
+  name: Button
+  class: button
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :focus: Focused
+  markup:
+    <button class="button">Button</button>
+    <button class="button" disabled>Button</button>
+*/
+.logonsbutton {
   position: relative;
-  height: 0px;
-}
-
-.rating-num {
-  position: relative;
-  top: -24px;
-  height: 24px;
-  color: white;
-  line-height: 24px;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 4px 4px 0 0;
-  padding: 0 6px;
-  background-color: #eb482f;
-  color: white;
-  width: auto;
-  margin: 0 auto 0 auto;
   display: inline-block;
-}
-
-.rating-num ons-icon {
-  font-size: 11px;
-  vertical-align: -0px;
-}
-
-.action-col {
-  text-align: center;
-  opacity: 0.4;
-  padding: 10px 0 8px;
-}
-
-.action-col:active {
-  opacity: 0.7;
-}
-
-.action-col ons-button {
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
   padding: 0;
-  line-height: 1;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 0px solid currentColor;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.logonsbutton:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.logonsbutton:active {
+  background-color: #fff;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.logonsbutton:focus {
+  outline: 0;
+}
+.logonsbutton:disabled,
+.logonsbutton[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
 }
 
-.action-icon {
-  padding: 0 0 4px 0;
+
+/* topdoc
+  name: Outline Button
+  class: button--outline
+  use: Button
+  markup:
+    <button class="button button--outline">Button</button>
+    <button class="button button--outline" disabled>Button</button>
+*/
+.logonsbutton--outline {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.logonsbutton--outline:active {
+  background-color: rgba(255,0,38,0.2);
+  border: 1px solid #fff;
+  color: #fff;
+  opacity: 1;
+}
+.logonsbutton--outline:hover {
+  border: 1px solid #fff;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
 }
 
-.action-icon ons-icon {
-  font-size: 28px;
+/* topdoc
+  name: Large Button
+  class: button--large
+  use: Button
+  markup:
+    <button class="button button--large">Button</button>
+*/
+.logonsbutton--large {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 12px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.logonsbutton--large:active {
+ background-color: rgba(255,0,38,0.2);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 1;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
-.action-label {
-  font-size: 12px;
+.logonsbutton--large:hover {
+   border: 1px solid #fff;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+.logonsbutton--large:focus {
+  outline: 0;
 }
 
-.prop-desc {
-  font-size: 14px;
-  opacity: 0.7;
+/* topdoc
+  name: Quiet Button
+  class: button--quiet
+  markup:
+    <button class="button--quiet">Button</button>
+    <button class="button--quiet" disabled>Button</button>
+*/
+.logonsbutton--quiet {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 0px solid currentColor;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  background: transparent;
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+  border: none;
+}
+.logonsbutton--quiet:disabled,
+.logonsbutton--quiet[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+  border: none;
+}
+.logonsbutton--quiet:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.logonsbutton--quiet:focus {
+  outline: 0;
+}
+.logonsbutton--quiet:active {
+  background-color: transparent;
+  border: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.2;
+  color: #fff;
 }
 
-.prop-desc ons-icon {
-  font-size: 14px;
-  vertical-align: -0px;
-  opacity: 0.5;
-}
+
+/*nav bar*/
 
 
 .navigation-bar {
