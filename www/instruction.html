@@ -6,7 +6,7 @@
 		  </div>
 		  <div class="navigation-bar__center navigation-bar--android__center">
 			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
-			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('detail.html')".></i> Step 1
+			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('detail.html')".>{{current_job.jobTitle}}</i>
 			</span>
 		  </div>
 		  <div class="navigation-bar__right navigation-bar--android__right">
@@ -33,10 +33,6 @@
 		  </div>
 
 		</div>
-
-      
-      
-	  
-      <button style="position:absolute; bottom:0px" class="button button--large" ng-click="takePic()">Take Photo</button>
+		<button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-click="takePic()">Take Photo</button>
      
 </ons-page>

@@ -26,30 +26,28 @@
 
       </ons-row>
 
-
-      <ons-list>
-        <ons-list-item>
-          <ons-row>
-            <ons-col class="info-col">
-              <div class="info-num">{{completedJob}}</div>
-              <div class="info-unit">EXP</div>
-            </ons-col>
-            <ons-col class="info-col">
-              <div class="info-num">{{userBalance}}</div>
-              <div class="info-unit">Balance</div>
-            </ons-col>
-          </ons-row>
+		<ons-list>
+		<ons-list-header>Balance</ons-list-header>
+		 <ons-list-item modifier="chevron">
+          <ons-icon icon="ion-social-usd" size="20px"></ons-icon>
+          {{userBalance}}
         </ons-list-item>
-      </ons-list>
-	  
-	  <div class="progress">
-  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{completedJob}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedJob}}%">
-    {{completedJob}} %
-  </div>
-</div>
-	 
+		</ons-list>
+
+		
+		
+
+	  <ons-list-header>Progress</ons-list-header>
+	  <br>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{completedJob}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{completedJob}}%">
+			{{completedJob}} %
+		  </div>
+		</div>
+
+
         <ons-list class="person-list">
-          <ons-list-header class="person-list-header">Ranking</ons-list-header>
+          <ons-list-header>Ranking</ons-list-header>
           <ons-list-item class="person" modifier="tappable" ng-repeat="i in [1,2,3,4,5]">
             <ons-row>
               <ons-col width="60px">
