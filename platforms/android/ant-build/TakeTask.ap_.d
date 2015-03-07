@@ -62,7 +62,6 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\cordova.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\cordova_plugins.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\detail.html \
-C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\fds.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\home.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\index.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\instruction.html \

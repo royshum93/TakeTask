@@ -7,13 +7,7 @@
   </div>
   <div class="navigation-bar__center navigation-bar--android__center">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0">
-      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
-    </span>
-  </div>
- <div class="navigation-bar__right navigation-bar--android__right">
-   
-    <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-android-more" style="font-size:20px" ng-click="appNavi.pushPage('setting/setting.html');"></i>
+      <i class="ion-cube" style="font-size:20px;"></i> Acheivement
     </span>
   </div>
 </div>
@@ -38,146 +32,36 @@
           <ons-row>
             <ons-col class="info-col">
               <div class="info-num">{{completedJob}}</div>
-              <div class="info-unit">Task done</div>
-            </ons-col>
-            <ons-col class="info-col">
-              <div class="info-num">40</div>
-              <div class="info-unit">Bookmarked</div>
+              <div class="info-unit">EXP</div>
             </ons-col>
             <ons-col class="info-col">
               <div class="info-num">{{userBalance}}</div>
-              <div class="info-unit">Points</div>
+              <div class="info-unit">Balance</div>
             </ons-col>
           </ons-row>
         </ons-list-item>
       </ons-list>
+	  
+	  <div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% Complete (danger)</span>
+  </div>
+</div>
+	 
+        <ons-list class="person-list">
+          <ons-list-header class="person-list-header">Ranking</ons-list-header>
+          <ons-list-item class="person" modifier="tappable" ng-repeat="i in [1,2,3,4,5]">
+            <ons-row>
+              <ons-col width="60px">
+              <img src="images/profile-image-0{{i}}.png" class="person-image">
+              </ons-col>
+              <ons-col class="person-name">
+                {{}}
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
       
-      <ul class="list list--noborder">
-          <li class="list__item">
-            <span class="list__item__line-height">
-                <div class="button-bar" style="width:280px;margin:0 auto;">
-                  <div class="button-bar__item">
-                    <input type="radio" name="segment-a" checked>
-                    <button class="button-bar__button">Information</button>
-                  </div>
-                  <div class="button-bar__item">
-                    <input type="radio" name="segment-a" onclick="appNavi.pushPage('profile/coupons.html', { animation : 'none' } )">
-                    <button class="button-bar__button">Coupons</button>
-                  </div>
-                </div>
-            </span>
-          </li>
-        </ul>
 
-        <ons-list>
-        <ons-list-header>Basic Information</ons-list-header>
-            <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="70px">
-                    <span class="list__item__line-height">Name</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="Name" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-           
-           <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="70px">
-                    <span class="list__item__line-height">Email</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="email" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-            
-             <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="70px">
-                    <span class="list__item__line-height">Gender</span>
-                 </ons-col>
-                 <ons-col>
-                 <span class="list__item__line-height">Female</span>
-                </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-           
-        
-            <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="120px">
-                    <span class="list__item__line-height">Martial Status</span>
-                 </ons-col>
-                 <ons-col>
-                     <span class="list__item__line-height">Married</span>
-                </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-
-    
-            <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="120px">
-                    <span class="list__item__line-height">Year of Birth</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="1990" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-
-
-      
- <ons-list-header>Reward Account Details</ons-list-header>
-             <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="70px">
-                    <span class="list__item__line-height">Name</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="name" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-            
-            <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="70px">
-                    <span class="list__item__line-height">Type</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="PayPal" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
-        
-         <ul class="list list--noborder">
-              <li class="list__item">
-              <ons-row>
-              <ons-col width="100px">
-                    <span class="list__item__line-height">Account no.</span>
-                 </ons-col>
-                 <ons-col>
-                <input type="text" class="text-input text-input--transparent" style="width:100%; margin-top:4px;" placeholder="1234567890" disabled="true">
-                   </ons-col>
-              </ons-row>
-              </li>
-           </ul>
     
 </ons-page>

@@ -1,15 +1,19 @@
 <ons-page ng-controller="bookmarkPageController">
-        <ons-toolbar>
-          <div class="center">
-            Bookmark
-          </div>
-          <div class="right">
-            <ons-toolbar-button>
-              <ons-icon icon="ion-search" fixed-width="false" style="font-size: 26px; vertical-align: -4px;"></ons-icon>
-            </ons-toolbar-button>
-          </div>
-        </ons-toolbar>
-
+       <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;"></i> My Task
+    </span>
+  </div>
+ <div class="navigation-bar__right navigation-bar--android__right">
+	<span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-android-refresh" style="font-size:20px;" ng-click="appNavi.refreshpage()"></i>
+    </span>
+  </div>
+</div>
 
 
         <ons-list class="timeline" modifier="inset">
