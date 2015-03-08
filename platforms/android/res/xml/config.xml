@@ -25,4 +25,8 @@
     <preference name="KeepRunning" value="true" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackgroundColor" value="0xffffffff" />
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <access origin="https://oauth.io" />
 </widget>

@@ -63,6 +63,20 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/com.oauthio.plugins.oauthio/www/dist/oauth.js",
+        "id": "com.oauthio.plugins.oauthio.OAuth",
+        "merges": [
+            "OAuth"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -72,7 +86,9 @@ module.exports.metadata =
     "org.apache.cordova.plugin.ActivityIndicator": "1.0.0",
     "org.apache.cordova.network-information": "0.2.13",
     "org.apache.cordova.geolocation": "0.3.10",
-    "org.apache.cordova.dialogs": "0.2.10"
+    "org.apache.cordova.dialogs": "0.2.10",
+    "com.oauthio.plugins.oauthio": "0.2.4",
+    "org.apache.cordova.inappbrowser": "0.6.0"
 }
 // BOTTOM OF METADATA
 });

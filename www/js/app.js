@@ -269,8 +269,8 @@ function submitJobController($scope,$http){
 }
 
 
-function profileController($scope,$http){
 	ActivityIndicator.show("Loading");
+function profileController($scope,$http){
 	$scope.bkjob = 0;
 	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
 	db.transaction(function(tx) {
@@ -301,6 +301,23 @@ function profileController($scope,$http){
 			ActivityIndicator.hide();
 			alert("Connection Timeout. Please Check your network connection");
 	});
+	
+	OAuth.initialize('jL2XFF-yscMEV66uQDrwy4p3btU');
+		
+		function authenticate(callback) {
+			OAuth.popup('facebook')
+				.done(function(result) {
+					callback(null, result);
+				})
+				.fail(function(error) {
+					console.log(error);
+					callback(error);
+				});
+					}
+	
+	
+	
+	
 }
 
 function bookmarkPageController($scope){
