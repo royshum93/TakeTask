@@ -305,7 +305,9 @@ function profileController($scope,$http){
 	OAuth.initialize('jL2XFF-yscMEV66uQDrwy4p3btU');
 		
 		function authenticate(callback) {
-			OAuth.popup('facebook')
+			OAuth.popup('facebook', {
+				cache: true
+			})
 				.done(function(result) {
 					callback(null, result);
 				})
