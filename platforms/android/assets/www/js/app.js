@@ -1,9 +1,11 @@
+/*global appNavi*/
+
 (function(){
             'use strict';
-            var app = angular.module('TakeTask', ['onsen']);
-			app.controller('JobListController', JobListController);
-			app.controller('LoginController', LoginController);
-			app.controller('showJobDetailController', showJobDetailController);
+            var app = angular.module('TakeTask', ['onsen', 'TakeTask.notification', 'TakeTask.connection']);
+			app.controller('JobListController', [JobListController]);
+			app.controller('LoginController', ['$scope', '$window', 'connectService',LoginController]);
+			app.controller('showJobDetailController', [showJobDetailController]);
 			app.controller('takePicJobController', takePicJobController);
 			app.controller('submitJobController', submitJobController);
 			app.controller('bookmarkPageController', bookmarkPageController);
@@ -19,43 +21,26 @@ ons.ready(function(){
 });
 
 
-function LoginController($scope, $http, $window){
+
+function LoginController($scope, $window, connectService){
 	
     $scope.login = function(id, password){
-    	
-        loginpath = 'http://137.189.97.77:8080/cgi/taketask_login.php';
-        
-        var validate_obj = {user:id, pass:password, action:"login"};
-		
-		ActivityIndicator.show("Loading");
-         
-        $http.post('http://137.189.97.77:8080/cgi/taketask_login.php',validate_obj,{timeout:30000})
-        .success(function(data){
-			ActivityIndicator.hide();
-            if (data.length == 32){
-                localStorage.setItem("userToken", data);
-                $scope.appNavi.resetToPage('tabBar.html');
-            }else if (data.length < 10)
-                alert(data + " is incorrect, please login again.");
-			else
-				alert("Connection Timeout. Please Check your network connection");
-        }).error(function(){
-			ActivityIndicator.hide();
-			alert("Connection Timeout. Please Check your network connection");
-		});
-        
+
+        connectService.login({user:id, pass:password}, function(){
+            $scope.appNavi.resetToPage('tabBar.html');
+        });
+
 	};
     
-    
     $scope.logout = function(){
-        $http.post('http://137.189.97.77:8080/cgi/taketask_login.php',{action:"logout", token:localStorage.getItem("userToken")});
-        localStorage.setItem("userToken", "");
-        appNavi.resetToPage('login.html');
+        connectService.logout(function(){
+            appNavi.resetToPage('login.html');
+        });
     }
 }
 
 
-function JobListController($scope, $http, $window){
+function JobListController($scope, $http, $window, NotifyNew){
 	
 	refreshpage();
 	
@@ -72,6 +57,10 @@ function JobListController($scope, $http, $window){
 						localStorage.setItem("jobList", angular.toJson(data));
 						$scope.joblist = data;
 						ActivityIndicator.hide();
+
+						if (data.length != 0){
+							//NotifyNew(data[0].id);
+						}
 					}).error(function(){
 						ActivityIndicator.hide();
 						alert("Connection Timeout. Please Check your network connection");

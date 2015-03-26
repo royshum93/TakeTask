@@ -4,19 +4,21 @@
         <div class="center">TAKETASK</div>
       </ons-toolbar>
 
+        <div class="logo">
+            <img src="pics/taketasklogo.fw.png"/>
+        </div>
+
       <div class="login-form">
 
         <input type="text" class="text-input--underbar width-full" placeholder="Email" ng-model="user" value="">
         <input type="password" class="text-input--underbar width-full" placeholder="Password" ng-model="pass" value="">
         <br><br>
-        <ons-button modifier="large" class="login-button" ng-click="login(user,pass)">Log In</ons-button>
+        
+         <ons-button modifier="large" class="login-button" ng-click="login(user,pass)">Log In</ons-button>
         <br>
-        OR
-        <br>
-        <br>
-         <ons-button modifier="large--cta" ng-click="appNavi.pushPage('signup.html')">Sign up</ons-button>
+        <button class="button button--outline" onclick="loginRedirects.pushPage('signup.html', {animation:'slide'} )">Sign Up</button>
          <br>
-        <ons-button modifier="quiet" class="forgot-password" onclick="appNavi.pushPage('forgotpw.html')">Forgot password?</ons-button>
+         <button class="button--quiet" onclick="appNavi.pushPage('forgotpw.html', {animation:'slide'} )">Forgot password?</button>
       </div>
 
     </ons-page>

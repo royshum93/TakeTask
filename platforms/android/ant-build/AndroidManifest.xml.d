@@ -1,2 +1,2 @@
-R:\TakeTask\platforms\android\ant-build\AndroidManifest.xml : \
-R:\TakeTask\platforms\android\AndroidManifest.xml \
+R:\Taketask\platforms\android\ant-build\AndroidManifest.xml : \
+R:\Taketask\platforms\android\AndroidManifest.xml \
