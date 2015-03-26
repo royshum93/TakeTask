@@ -19,45 +19,32 @@
         <div class="profile-name">{{userdisplayName}}</div>
         <div class="profile-id">@{{userloginName}}</div>
         <div class="profile-desc">Level 1</div>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{completedJob}}" aria-valuemin="0" aria-valuemax="80" style="min-width: 2em; width: {{completedJob}}%">
+			{{completedJob}} %
+		  </div>
+		</div>
 
 		
       </div>
-	  
-	        <ons-list>
-        <ons-list-item>
-          <ons-row>
-            <ons-col class="info-col">
-              <div class="info-num">{{userBalance | currency}}</div>
-              <div class="info-unit">Balance</div>
-            </ons-col>
-            <ons-col class="info-col">
-              <button class="button button-block button-positive">
-				  Block Button
-				</button>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
-      </ons-list>
-
 
 
 		<ons-list>
 		<ons-list-header>Balance</ons-list-header>
-		 <ons-list-item modifier="chevron">
+		<ons-row>
+		<ons-col class="info-col">
+		 <ons-list-item>
           {{userBalance | currency}}
         </ons-list-item>
+		</ons-col>
+		<ons-col class="info-col">
+              <button class="button button-block button-balanced">
+				  Withdraw
+				</button>
+            </ons-col>
+		</ons-row>
 		</ons-list>
 
-		
-		
-
-	  <ons-list-header>Progress</ons-list-header>
-	  <br>
-		<div class="progress">
-		  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{completedJob}}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{completedJob}}%">
-			{{completedJob}} %
-		  </div>
-		</div>
 
 
         <ons-list class="person-list">
