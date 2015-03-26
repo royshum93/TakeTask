@@ -580,45 +580,67 @@ input[type=password] {
   padding-bottom: 10px;
 }
 
-/* setting.css */
+/* profile.css */
 
-.profile-wrapper {
-  padding: 16px 10px 0 10px;
+.profile-card {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  line-height: 1.4;
+  background-color: #33393c;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
 }
 
 .profile-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border: inset 1px rgba(0, 0, 0, 0.3);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: black;
+  border 1px solid white;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
 }
 
 .profile-name {
-  font-size: 18px;
-  padding: 4px 0 2px 0;
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  font-size: 17px;
 }
 
-.profile-email {
+.profile-id {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.profile-desc {
   font-size: 15px;
-  opacity: 0.4;
+  opacity: 0.6;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.switch--list-item {
-  margin-right: 0px;
+.info-col {
+  height: 60px;
+  line-height: 1;
+  padding: 12px 0 12px 4px;
 }
 
-.settings-header {
+.info-num {
+  font-size: 16px;
   font-weight: 500;
+  opacity: 0.8;
+}
+
+.info-unit {
+  margin-top: 6px;
   font-size: 14px;
   opacity: 0.4;
-  padding: 10px 0 0px 10px;
-  margin-bottom: -4px;
 }
 
-.settings-list {
-  margin-top: 10px;
-}
 
 
 /* bookmark.css */
@@ -683,55 +705,7 @@ input[type=password] {
   line-height: 1.15;
 }
 
-/* schedule.css */
 
-
-.plan-list {
-  border-top: none;
-  background-image: none !important;
-}
-
-.plan {
-  line-height: 1;
-  padding: 0;
-}
-
-.plan-left {
-  text-align: right;
-  padding: 10px 10px 10px 0;
-}
-
-.plan-center {
-  background-color: #FF5252;
-  opacity: 0.5;
-}
-
-.plan-right {
-  padding: 10px 40px 10px 10px;
-}
-
-.plan-date {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-
-.plan-duration {
-  font-size: 11px;
-  opacity: 0.4;
-}
-
-.plan-name {
-  font-size: 17px;
-  margin-bottom: 8px;
-}
-
-.plan-info {
-  opacity: 0.4;
-  font-size: 12px;
-  line-height: 1.4;
-}
 
 
 /* list_avatars.css */
@@ -1103,28 +1077,6 @@ input[type=password] {
   pointer-events: none;
 }
 
-/*profile*/
-.profile-wrapper {
-  padding: 16px 10px 0 10px;
-}
-
-.profile-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border: inset 1px rgba(0, 0, 0, 0.3);
-}
-
-.profile-name {
-  font-size: 18px;
-  padding: 4px 0 2px 0;
-}
-
-.profile-email {
-  font-size: 15px;
-  opacity: 0.4;
-}
 
 /* checkbox*/
 

@@ -13,18 +13,33 @@
 </div>
 
 
+<div class="profile-card">
 
-<ons-row class="profile-wrapper">
-        <ons-col width="80px" class="profile-image-wrapper">
-          <img src="images/profile-image-05.png" class="profile-image">
-        </ons-col>
+        <img src="images/profile-image-01.png" class="profile-image">
+        <div class="profile-name">{{userdisplayName}}</div>
+        <div class="profile-id">@{{userloginName}}</div>
+        <div class="profile-desc">Level 1</div>
 
-        <ons-col>
-          <div class="profile-name">{{userdisplayName}}</div>
-          <div class="profile-email">@{{userloginName}}</div>
-        </ons-col>
+		
+      </div>
+	  
+	        <ons-list>
+        <ons-list-item>
+          <ons-row>
+            <ons-col class="info-col">
+              <div class="info-num">{{userBalance | currency}}</div>
+              <div class="info-unit">Balance</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <button class="button button-block button-positive">
+				  Block Button
+				</button>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
 
-      </ons-row>
+
 
 		<ons-list>
 		<ons-list-header>Balance</ons-list-header>
