@@ -15,7 +15,7 @@
 
 
 <ons-row class="profile-wrapper">
-        <ons-col width="60px" class="profile-image-wrapper">
+        <ons-col width="80px" class="profile-image-wrapper">
           <img src="images/profile-image-05.png" class="profile-image">
         </ons-col>
 
@@ -29,8 +29,7 @@
 		<ons-list>
 		<ons-list-header>Balance</ons-list-header>
 		 <ons-list-item modifier="chevron">
-          <ons-icon icon="ion-social-usd" size="20px"></ons-icon>
-          {{userBalance}}
+          {{userBalance | currency}}
         </ons-list-item>
 		</ons-list>
 

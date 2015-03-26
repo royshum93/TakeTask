@@ -269,8 +269,8 @@ function submitJobController($scope,$http){
 }
 
 
-function profileController($scope,$http){
 	ActivityIndicator.show("Loading");
+function profileController($scope,$http){
 	$scope.bkjob = 0;
 	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
 	db.transaction(function(tx) {
@@ -301,6 +301,10 @@ function profileController($scope,$http){
 			ActivityIndicator.hide();
 			alert("Connection Timeout. Please Check your network connection");
 	});
+	
+	
+	
+	
 }
 
 function bookmarkPageController($scope){
@@ -479,3 +483,5 @@ function MapViewController($scope){
 	}
 	
 }
+
+	

@@ -484,19 +484,4 @@ function MapViewController($scope){
 	
 }
 
-	function Oauth
 	
-	OAuth.initialize('jL2XFF-yscMEV66uQDrwy4p3btU');
-		
-		function authenticate(callback) {
-			OAuth.popup('facebook', {
-				cache: true
-			})
-				.done(function(result) {
-					callback(null, result);
-				})
-				.fail(function(error) {
-					console.log(error);
-					callback(error);
-				});
-					}
