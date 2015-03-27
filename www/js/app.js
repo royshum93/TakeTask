@@ -52,6 +52,10 @@ function LoginController($scope, $http, $window){
         localStorage.setItem("userToken", "");
         appNavi.resetToPage('login.html');
     }
+	
+	$scope.go = function ( path ) {
+		  $location.path( path );
+		};
 }
 
 

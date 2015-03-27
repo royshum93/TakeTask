@@ -1,4 +1,4 @@
-<ons-page>
+<ons-page ng-controller="LoginController">
       <div class="navigation-bar navigation-bar--android">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
@@ -10,7 +10,7 @@
   </div>
   <div class="navigation-bar__right navigation-bar--android__right">
     <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-log-out" style="font-size:20px;" ng-click="appNavi.pushPage('login.html')"></i>
+      <i class="ion-log-out" style="font-size:20px;" ng-click="logout()"></i>
     </span>
   </div>
 </div>
