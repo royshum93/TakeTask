@@ -4733,8 +4733,8 @@ a.item-content {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #F4D03F;
-  color: #222;
+  background-color: #5B8930;
+  color: #fff;
   font-weight: 500; }
 
 .platform-ios .item-divider-platform, .item-divider-ios {
@@ -4950,6 +4950,14 @@ a.item-content {
   margin-bottom: 0px; }
   .list:last-child.card {
     margin-bottom: 40px; }
+	
+.ng-invalid.ng-dirty {
+border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+border-color: #78FA89;
+}
 
 /**
  * List Header

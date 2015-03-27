@@ -53,9 +53,6 @@ function LoginController($scope, $http, $window){
         appNavi.resetToPage('login.html');
     }
 	
-	$scope.go = function ( path ) {
-		  $location.path( path );
-		};
 }
 
 
@@ -487,5 +484,6 @@ function MapViewController($scope){
 	}
 	
 }
+
 
 	
