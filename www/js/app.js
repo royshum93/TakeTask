@@ -10,6 +10,7 @@
 			app.controller('profileController', profileController);
 			app.controller('jobMapController', jobMapController);
 			app.controller('MapViewController', MapViewController);
+			app.controller('dateController', dateController);
 })();
 
 
@@ -483,6 +484,16 @@ function MapViewController($scope){
 		return map;
 	}
 	
+}
+
+function dateController($scope){
+
+   $scope.date = 31;
+   $scope.month = 12;
+   $scope.year = 60;
+   $scope.getNumber = function(num) {
+        return new Array(num);   
+   };
 }
 
 
