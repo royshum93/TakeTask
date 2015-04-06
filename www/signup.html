@@ -10,7 +10,6 @@
 </div>
 
 
-<div class="list">
 	<form name="myForm" novalidate>
 	
 
@@ -69,10 +68,20 @@
 		  <option ng-repeat="i in getNumber(year) track by $index">{{$index+1955}}</option>
 		</select>
 	  </label>
+	  
+	  
 	</form>
-</div>
+
+<ul>
+	<li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     I am Agree with All the TERMS and POLICY
+  </li>
+ </ul>
 		
-		<button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.user.$invalid || myForm.gender.$dirty && myForm.user.$invalid">
+		<button type="submit" class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.user.$invalid || myForm.gender.$dirty && myForm.user.$invalid">
 		Sign Up
 		</button>
 		

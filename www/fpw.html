@@ -1,0 +1,27 @@
+          <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;" ng-click="appNavi.pushPage('index.html')"></i> TAKETASK
+    </span>
+  </div>
+</div>
+
+<p style="padding"> Please enter your email to us, we will send you back your password.</p>
+
+<form name="Form" novalidate>
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="email" placeholder="Email">
+	<span ng-show="Form.email.$dirty && myForm.email.$invalid" class="help-block">
+			<p ng-show="Form.email.$error.required" class="help-block">Email is required.</p>
+			<p ng-show="Form.email.$error.email" class="help-block">Invalid email address.</p>
+			</span>
+  </label>
+</div>
+
+<button type="submit" class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="Form.email.$dirty && myForm.email.$invalid">
+		Submit
+		</button>
