@@ -10,27 +10,37 @@
 </div>
 
 
-<div class="list" ng-controller="popupController">
+<div class="list">
 	<form name="myForm" novalidate>
-	  <label class="item item-input">
-		<span class="input-label">First name</span>
-		<input type="text" name="firstname" ng-model="user" required>
+	
+
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">Name</span>
+		<input type="text" placeholder="Firstname Lastname" name="user" ng-model="user" required>
+		<span ng-show="myForm.user.$dirty && myForm.user.$invalid" class="help-block">
+		<p ng-show="myForm.user.$error.required" class="help-block">Name is required.</p>
+		</span>
 	  </label>
-	  <label class="item item-input">
-		<span class="input-label">Last name</span>
-		<input type="text" name="lastname" ng-model="lastname" required>
-	  </label>
-	  <label class="item item-input">
+	  
+	  <label class="item item-input item-stacked-label">
 		<span class="input-label">Email</span>
-		<input type="email" name="email" ng-model="email" required>
-		<div class=""ng-show="myForm.email.$dirty && myForm.email.$invalid">
-		{{showAlert}}	
-		</div>
+		<input type="email" placeholder="Paypal email" name="email" ng-model="email" required >
+		<span ng-show="myForm.email.$dirty && myForm.email.$invalid" class="help-block">
+			<p ng-show="myForm.email.$error.required" class="help-block">Email is required.</p>
+			<p ng-show="myForm.email.$error.email" class="help-block">Invalid email address.</p>
+			</span>
 	  </label>
-	  <label class="item item-input">
+		
+	  <label class="item item-input item-stacked-label">
 		<span class="input-label">Password</span>
-		<input type="password" name="password" ng-model="password" minlength="6" maxlength="12" required>
+		<input type="password" placeholder="password" name="password" ng-model="password" minlength="6" maxlength="12" required>
+		<span class="help-block" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+			<p ng-show="myForm.password.$error.required">Password is required.</p>
+			<p ng-show="myForm.password.$error.password">Invalid password.</p>
+		</span>
+		<p ng-show="myForm.password.$error.minlength" class="help-block">Password is too short.</p>
 	  </label>
+	  
 	  <label class="item item-input">
 		<span class="input-label">Gender</span>
 			<label class="radio-button">
@@ -62,7 +72,7 @@
 	</form>
 </div>
 		
-		<button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.user.$invalid || myForm.gender.$dirty && myForm.user.$invalid" ng-click="">
+		<button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.user.$invalid || myForm.gender.$dirty && myForm.user.$invalid">
 		Sign Up
 		</button>
 		
