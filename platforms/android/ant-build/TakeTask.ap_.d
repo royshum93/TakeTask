@@ -103,7 +103,7 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\oauth.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\pics \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\profiles \
-C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\signup.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\tabBar.html \
@@ -1953,6 +1953,7 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\node_modules\bootstr
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\node_modules\bootstrap\test-infra\S3Cachefile.json \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\node_modules\bootstrap\test-infra\s3_cache.py \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\node_modules\bootstrap\test-infra\uncached-npm-install.sh \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\pics\mail.png \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\pics\taketasklogo.fw.png \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\pics\taketasklogo.png \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\com.oauthio.plugins.oauthio \
@@ -1981,8 +1982,6 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.c
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.cordova.plugin.ActivityIndicator\www \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.cordova.plugin.ActivityIndicator\www\activityIndicator.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\profiles\profiles.html \
-C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting\feedback.html \
-C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting\setting.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\app.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\onsen-css-components-blue-basic-theme.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\onsen-css-components-blue-theme.css \

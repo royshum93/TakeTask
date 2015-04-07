@@ -12,6 +12,7 @@
 			app.controller('MapViewController', MapViewController);
 			app.controller('dateController', dateController);
 			app.controller('popupController', popupController);
+			app.controller('ItemController', ItemController);
 })();
 
 
@@ -574,3 +575,9 @@ $scope.showPopup = function() {
  };
 }
 
+function ItemController($scope){
+
+  $scope.items = ['Apple', 'Orange', 'Pear', 'Mango', 'Papaya'];
+
+ 
+}

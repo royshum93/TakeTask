@@ -1,13 +1,13 @@
 
 <ons-page ng-controller="profileController">
 
-  <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar navigation-bar--android" style="position:absolute;">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
   </div>
   <div class="navigation-bar__center navigation-bar--android__center">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0">
-      <i class="ion-cube" style="font-size:20px;"></i> Acheivement
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
     </span>
   </div>
 </div>
@@ -23,24 +23,22 @@
 			{{completedJob}} %
 		  </div>
 		</div>
+		
 
 		
       </div>
 
 
+	
 		<ons-list-header>Balance</ons-list-header>
-		
-		 <h2>
-          {{userBalance | currency}}
-		  </h2>
 
-              <button class="button button-full button-balanced" style="position:absolute; bottom:0px" ng-click="">
+        <h3>  {{userBalance | currency}} </h3>
+		
+		<br>
+
+              <button class="button button-energized">
 				  Withdraw
 				</button>
 
 
-
-
-
-    
 </ons-page>

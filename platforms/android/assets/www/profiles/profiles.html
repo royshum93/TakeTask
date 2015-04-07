@@ -1,13 +1,13 @@
 
 <ons-page ng-controller="profileController">
 
-  <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar navigation-bar--android" style="position:absolute;">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
   </div>
   <div class="navigation-bar__center navigation-bar--android__center">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0">
-      <i class="ion-cube" style="font-size:20px;"></i> Acheivement
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
     </span>
   </div>
 </div>
@@ -15,7 +15,6 @@
 
 <div class="profile-card">
 
-        <img src="images/profile-image-01.png" class="profile-image">
         <div class="profile-name">{{userdisplayName}}</div>
         <div class="profile-id">@{{userloginName}}</div>
         <div class="profile-desc">Level 1</div>
@@ -24,43 +23,22 @@
 			{{completedJob}} %
 		  </div>
 		</div>
+		
 
 		
       </div>
 
 
-		<ons-list>
+	
 		<ons-list-header>Balance</ons-list-header>
-		<ons-row>
-		<ons-col>
-		 <ons-list-item>
-          {{userBalance | currency}}
-        </ons-list-item>
-		</ons-col>
-		<ons-col>
-              <button class="button button-block button-balanced">
+
+        <h3>  {{userBalance | currency}} </h3>
+		
+		<br>
+
+              <button class="button button-energized">
 				  Withdraw
 				</button>
-            </ons-col>
-		</ons-row>
-		</ons-list>
 
 
-
-        <ons-list class="person-list">
-          <ons-list-header>Ranking</ons-list-header>
-          <ons-list-item class="person" modifier="tappable" ng-repeat="i in [1,2,3,4,5]">
-            <ons-row>
-              <ons-col width="60px">
-              <img src="images/profile-image-0{{i}}.png" class="person-image">
-              </ons-col>
-              <ons-col class="person-name">
-                {{}}
-              </ons-col>
-            </ons-row>
-          </ons-list-item>
-        </ons-list>
-      
-
-    
 </ons-page>

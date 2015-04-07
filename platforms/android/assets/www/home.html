@@ -1,4 +1,4 @@
-<ion-content ng-controller="JobListController">
+<ons-page ng-controller="JobListController">
     <div class="navigation-bar navigation-bar--android">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
@@ -9,14 +9,41 @@
     </span>
   </div>
  <div class="navigation-bar__right navigation-bar--android__right">
-    <span class="toolbar-button--quiet navigation-bar__line-height">
-      <i class="ion-map" style="font-size:20px;" ng-click="appNavi.pushPage('mapView.html')"></i>
-    </span>
 	<span class="toolbar-button--quiet navigation-bar__line-height">
       <i class="ion-android-refresh" style="font-size:20px;" ng-click="appNavi.refreshpage()"></i>
     </span>
   </div>
 </div>
+
+
+<ons-list>
+      <ons-list-item class="list--item" ng-repeat="job in joblist">
+      	<ons-carousel swipeable overscrollable style="height: 72px; width: 100%;" initial-index="1" auto-scroll>
+		<ons-carousel-item class="list--action-menu-left">
+
+          </ons-carousel-item>
+          <ons-carousel-item class="list--action-item">
+            <ons-row>
+              <ons-col width="52px" style="padding: 10px 0 0 0;">
+                <div style="width: 42px; height: 42px; border-radius: px;"><img src="pics/mail.png"></div>
+              </ons-col>
+              <ons-col>
+                <div class="name">
+                  {{job.jobTitle}}
+                </div>
+                <div class="desc">
+                  {{job.jobDescription}}
+                </div>
+				
+              </ons-col>
+            </ons-row>
+          </ons-carousel-item>
+		   <ons-carousel-item class="list--action-menu-right">
+		  
+          </ons-carousel-item>
+        </ons-carousel>
+      </ons-list-item>
+    </ons-list>
 
 
 
@@ -41,6 +68,6 @@
 </div>
 
 
-</ion-content>
+</ons-page>
 
 

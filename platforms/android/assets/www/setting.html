@@ -1,0 +1,64 @@
+ <ons-page ng-controller="LoginController">
+      <div class="navigation-bar navigation-bar--android">
+  <div class="navigation-bar__left navigation-bar--android__left">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+  </div>
+  <div class="navigation-bar__center navigation-bar--android__center">
+    <span class="toolbar-button navigation-bar__line-height" style="padding:0">
+      <i class="ion-cube" style="font-size:20px;"></i> TAKETASK
+    </span>
+  </div>
+  <div class="navigation-bar__right navigation-bar--android__right">
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-log-out" style="font-size:20px;" ng-click="logout()"></i>
+    </span>
+  </div>
+</div>
+
+
+
+
+      <div class="settings-header">Notification</div>
+
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          Task Due Reminder
+          <ons-switch modifier="list-item"></ons-switch>
+        </ons-list-item>
+
+        <ons-list-item>
+          Recommended Task
+          <ons-switch modifier="list-item" checked></ons-switch>
+        </ons-list-item>
+      </ons-list>
+      
+      <div class="settings-header">Accessibility</div>
+
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          Only WiFi Transmission
+          <ons-switch modifier="list-item"></ons-switch>
+        </ons-list-item>
+
+        <ons-list-item>
+          Allow GPS
+          <ons-switch modifier="list-item" checked></ons-switch>
+        </ons-list-item>
+      </ons-list>
+
+    <div class="settings-header">Others</div>
+
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item modifier="chevron">
+          TAKETASK Help Centre
+        </ons-list-item>
+        <ons-list-item modifier="chevron">
+          Share to your friend
+        </ons-list-item>
+      </ons-list>
+
+
+      
+
+
+ </ons-page>
