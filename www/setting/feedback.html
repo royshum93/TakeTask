@@ -1,19 +1,20 @@
-<ons-page>
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Send a feedback</div>
-      </ons-toolbar>
-      
+	 <div class="navigation-bar navigation-bar--android">
+		  <div class="navigation-bar__left navigation-bar--android__left">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
+		  </div>
+		  <div class="navigation-bar__center navigation-bar--android__center">
+			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
+			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('tabBar.html')".></i> 
+				<i class="ion-cube" style="font-size:20px;"></i> Send a Feedback
+			</span>
+		  </div>
 
       <ons-list modifier="inset" style="margin-top: 10px">
         <ons-list-item class="to-wrapper">
           <ons-row>
-            <ons-col width="52px">
-             <ons-icon icon="ion-android-social-user" width="42" class="to-image"></ons-icon>
-            </ons-col>
             <ons-col>
-              <div class="to-name">Graham</div>
-              <div class="to-email">@graham</div>
+              <div class="to-name">{{userdisplayName}}</div>
+              <div class="to-email">@{{userloginName}}</div>
             </ons-col>
           </ons-row>
         </ons-list-item>
@@ -32,8 +33,9 @@
       </ons-list>
 
       <div style="padding: 10px 9px">
-        <ons-button modifier="large" style="margin: 0 auto;">
-          Send
-        </ons-button>
+	  <button type="submit" class="button button-full button-energized" style="position:absolute; bottom:0px; margin: 0 auto;" ng-click="">
+				  Send
+				</button>
+
       </div>
     </ons-page>

@@ -2013,56 +2013,113 @@ input {
   border-radius: 0px;
 }
 /**
- * Cards and Inset Lists
+ * pricing
  * --------------------------------------------------
- * A card and list-inset are close to the same thing, except a card as a box shadow.
  */
-.card, .list-inset {
-  overflow: hidden;
-  margin: 20px 10px;
-  border-radius: 2px;
-  background-color: #fff; }
+.pricing ul {
+  padding: 0;
+  list-style: none;
+}
+.pricing .unit {
+  position: relative;
+  display: inline-block;
+  min-width: 250px;
+  text-align: center;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 
-.card {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  .card .item {
-    border-left: 0;
-    border-right: 0; }
-  .card .item:first-child {
-    border-top: 0; }
-  .card .item:last-child {
-    border-bottom: 0; }
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+}
+.pricing .unit.active {
+  top: 5px;
+  z-index: 1;
+  margin-right: -36px;
+  margin-left: -36px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+}
+.pricing .unit.active .price-title h3 {
+  font-size: 40px;
+}
+@media screen and (max-width: 767px) {
+  .pricing .unit {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .pricing .unit.active {
+    top: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .pricing .unit.active .price-title h3 {
+    font-size: 30px;
+  }
+}
+.pricing .price-title {
+  padding: 20px 20px 10px;
+  color: #fff;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
 
-.padding .card, .padding .list-inset {
-  margin-left: 0;
-  margin-right: 0; }
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+}
+.pricing .price-title h3, .pricing .price-title h3 > p {
+  margin: 0;
+}
+.pricing .price-body {
+  padding: 20px 20px 10px;
+}
+.pricing .price-body ul {
+  padding-top: 10px;
+}
+.pricing .price-body li {
+  margin-bottom: 10px;
+}
+.pricing .price-body h4 {
+  margin: 0;
+}
+.pricing .price-foot {
+  padding: 20px;
+  background-color: #e6e9ed;
+          border-bottom-right-radius: 4px;
+          border-bottom-left-radius: 4px;
 
-.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px; }
-  .card .item:first-child .item-content, .list-inset .item:first-child .item-content, .padding > .list .item:first-child .item-content {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px; }
-.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px; }
-  .card .item:last-child .item-content, .list-inset .item:last-child .item-content, .padding > .list .item:last-child .item-content {
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px; }
-
-.card .item:last-child, .list-inset .item:last-child {
-  margin-bottom: -1px; }
-
-.card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
-  margin-right: 0;
-  margin-left: 0; }
-  .card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
-    padding-right: 44px; }
-
-.padding-left > .list .item {
-  margin-left: 0; }
-
-.padding-right > .list .item {
-  margin-right: 0; }
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+.pricing .price-primary .price-title {
+  background-color: #4fc1e9;
+}
+.pricing .price-primary .price-body {
+  background-color: #d7f1fa;
+}
+.pricing .price-primary .price-body ul {
+  border-top: 1px solid #aae1f4;
+}
+.pricing .price-success .price-title {
+  background-color: #a0d468;
+}
+.pricing .price-success .price-body {
+  background-color: #ebf6df;
+}
+.pricing .price-success .price-body ul {
+  border-top: 1px solid #d2ebb7;
+}
+.pricing .price-warning .price-title {
+  background-color: #ffce54;
+}
+.pricing .price-warning .price-body {
+  background-color: #fffaed;
+}
+.pricing .price-warning .price-body ul {
+  border-top: 1px solid #ffebba;
+}

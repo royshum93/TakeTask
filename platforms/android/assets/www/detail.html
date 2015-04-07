@@ -9,24 +9,17 @@
 				<i class="ion-cube" style="font-size:20px;"></i> TAKETASK
 			</span>
 		  </div>
-		  <div class="navigation-bar__right navigation-bar--android__right">
-			<span class="toolbar-button--quiet navigation-bar__line-height">
-			  <i class="ion-bookmark" style="font-size:25px;" ng-click=""></i>
-			</span>
-		  </div>
 		</div>
-
-      
-<div class="list card">
-
-  <div class="item item-avatar">
-    <img src="mcfly.jpg">
+		
+<ion-pane>
+	<div class="item">
     <h2>{{current_job.jobTitle}}</h2>
     <p>Start: January 05, 2015</p>
 	<p>End: {{current_job.jobDeadline}}</p>
-  </div>
+	</div>
+</ion-pane>
 
-   <div class="item tabs tabs-secondary tabs-icon-left">
+<div class="item tabs tabs-secondary tabs-icon-left" style="color:red">
     <a class="tab-item" href="#">
       <i class="icon ion-social-usd"></i>
       HKD {{current_job.rewardPoint}}
@@ -43,7 +36,10 @@
       <i class="icon ion-compose"></i>
       5
     </a>
-  </div>
+ </div>
+
+
+   
   
   
   <div class="item item-body">
@@ -51,10 +47,7 @@
     <p>
       {{current_job.jobDescription}}
     </p>
-    <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>
+
   </div>
 
 
@@ -63,6 +56,6 @@
 
 
     
-  <button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">TAKETASK</button>
+  <button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-click="taketask();" value="Take Pictures">Show Task</button>
 
 </ons-page>
