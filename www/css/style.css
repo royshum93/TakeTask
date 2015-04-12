@@ -2135,6 +2135,8 @@ margin-top: 3px;
   padding: 0 12px;
   box-sizing: border-box;
   line-height: 72px;
+  vertical-align: middle;
+  font-size: 20px;
 }
 .list-action-menu-left:active {
   background-color: #049372;
@@ -2147,6 +2149,8 @@ margin-top: 3px;
   padding: 0 12px;
   box-sizing: border-box;
   line-height: 72px;
+  vertical-align: middle;
+  font-size: 20px;
 }
 .list-action-menu-right:active {
   background-color: #E2B13C;
