@@ -17,12 +17,12 @@
 
 
 <ons-list>
-      <ons-list-item class="list--item" ng-repeat="job in joblist">
+      <ons-list-item class="list-item" ng-repeat="job in joblist">
       	<ons-carousel swipeable overscrollable style="height: 72px; width: 100%;" initial-index="1" auto-scroll>
-		<ons-carousel-item class="list--action-menu-left">
+		<ons-carousel-item class="list-action-menu-left" ng-click="">
 
           </ons-carousel-item>
-          <ons-carousel-item class="list--action-item">
+          <ons-carousel-item class="list-action-item">
             <ons-row>
               <ons-col width="52px" style="padding: 10px 0 0 0;">
                 <div style="width: 42px; height: 42px; border-radius: px;"><img src="pics/mail.png"></div>
@@ -38,7 +38,7 @@
               </ons-col>
             </ons-row>
           </ons-carousel-item>
-		   <ons-carousel-item class="list--action-menu-right">
+		   <ons-carousel-item class="list-action-menu-right" ng-click="">
 		  
           </ons-carousel-item>
         </ons-carousel>

@@ -96,6 +96,7 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\langs.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\list.html \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\location.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\login.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\mapView.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\node_modules \
@@ -103,6 +104,7 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\oauth.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\pics \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\profiles \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\signup.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles \
@@ -119,6 +121,8 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\js\services.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\onsen \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\css \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\ionic.css \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\ionic.min.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\scss \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\css\ionic.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\lib\ionic\css\ionic.min.css \
@@ -1982,6 +1986,8 @@ C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.c
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.cordova.plugin.ActivityIndicator\www \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\plugins\org.apache.cordova.plugin.ActivityIndicator\www\activityIndicator.js \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\profiles\profiles.html \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting\feedback.html \
+C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\setting\setting.html \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\app.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\onsen-css-components-blue-basic-theme.css \
 C:\Users\User\Desktop\TakeTask\platforms\android\assets\www\styles\onsen-css-components-blue-theme.css \

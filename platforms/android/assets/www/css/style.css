@@ -2123,12 +2123,12 @@ margin-top: 3px;
 
 /*swipe*/
 
-.list--item {
+.list-item {
   padding: 0;
   height: 72px;
 }
 
-.list--action-menu-left {
+.list-action-menu-left {
   
   background-color: #26C281;
   color: white;
@@ -2136,11 +2136,11 @@ margin-top: 3px;
   box-sizing: border-box;
   line-height: 72px;
 }
-.list--action-menu-left:active {
+.list-action-menu-left:active {
   background-color: #049372;
 }
 
-.list--action-menu-right {
+.list-action-menu-right {
   
   background-color: #F7CA18;
   color: white;
@@ -2148,11 +2148,11 @@ margin-top: 3px;
   box-sizing: border-box;
   line-height: 72px;
 }
-.list--action-menu-right:active {
-  background-color: #FFA400;
+.list-action-menu-right:active {
+  background-color: #E2B13C;
 }
 
-.list--action-item {
+.list-action-item {
   padding: 0 12px;
   box-sizing: border-box;
 }

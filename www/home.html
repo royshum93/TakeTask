@@ -32,7 +32,11 @@
                   {{job.jobTitle}}
                 </div>
                 <div class="desc">
-                  {{job.jobDescription}}
+                    <div class="row">
+					  <div class="col"> <i class="icon ion-cash">HKD $ {{job.rewardPoint}} </i>
+					  <i class="icon ion-star"> 100 </i>
+					  <i class="icon ion-location"> {{job.jobLocation}} </i></div>
+					</div>
                 </div>
 				
               </ons-col>
@@ -44,28 +48,6 @@
         </ons-carousel>
       </ons-list-item>
     </ons-list>
-
-
-
-  <div class="card" ng-click="viewjob(job.jobID)" ng-repeat="job in joblist">
-  <div class="item item-divider">
-    <h2>{{job.jobTitle}}</h2>
-  </div>
-  <div class="item item-text-wrap">
-    {{job.jobDescription}}
-  </div>
-  <div class="item item-divider">
-  <div class="row">
-  <div class="col col-70"> <i class="icon ion-cash">HKD $ {{job.rewardPoint}} </i>
-  <i class="icon ion-star"> 100 </i>
-  <i class="icon ion-location"> {{job.jobLocation}} </i></div>
-  <div class="col col-10">
-		<i class="icon ion-camera"> 4</i></div>
-	<div class="col col-10">
-		<i class="icon ion-compose">5 </i></div>
-</div>
-  </div>
-</div>
 
 
 </ons-page>
