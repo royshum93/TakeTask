@@ -127,6 +127,28 @@ function JobListController($scope, $http, $window){
 		localStorage.setItem("info_text","");
         appNavi.pushPage('detail.html');
     };
+	
+		function saveTask(){
+            var job_var = angular.fromJson(localStorage.getItem("last_job"));
+            
+            var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
+            var data = [job_var.jobID, localStorage.getItem("last_job"),localStorage.getItem("capturePic"),$scope.infotext,job_var.jobDeadline];
+            
+            
+            db.transaction(
+                function(tx) {
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS bookmarked ('jobID' INT, 'job' TEXT, 'jobPhoto' TEXT, 'jobDescription' TEXT, 'jobDeadline' DateTime)");
+                    tx.executeSql("select * from bookmarked where jobID = ?",[data[0]], function(tx,rs){
+                        if (rs.rows.length > 0) 
+                            tx.executeSql("delete from bookmarked where jobID = ?",[data[0]]);
+                        tx.executeSql("insert into bookmarked values(?,?,?,?,?)",data);
+						localStorage.setItem("defaultPage","bookmark.html");
+                        appNavi.resetToPage('tabBar.html');
+                    });
+                }
+            );
+    
+    };
 }
 
 
