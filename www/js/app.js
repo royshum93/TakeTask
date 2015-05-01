@@ -1,13 +1,13 @@
 (function(){
             'use strict';
-            var app = angular.module('TakeTask', ['onsen']);
-			app.controller('JobListController', JobListController);
-			app.controller('LoginController', LoginController);
+            var app = angular.module('TakeTask', ['onsen', 'TakeTask.connection']);
+			app.controller('JobListController', ['$scope', '$window', 'connectService', JobListController]);
+			app.controller('LoginController', ['$scope', '$window', 'connectService',LoginController]);
 			app.controller('showJobDetailController', showJobDetailController);
 			app.controller('takePicJobController', takePicJobController);
 			app.controller('submitJobController', submitJobController);
 			app.controller('bookmarkPageController', bookmarkPageController);
-			app.controller('profileController', profileController);
+			app.controller('profileController', ['$scope', 'connectService',profileController]);
 			app.controller('jobMapController', jobMapController);
 			app.controller('MapViewController', MapViewController);
 			app.controller('dateController', dateController);
@@ -21,45 +21,26 @@ ons.ready(function(){
         appNavi.resetToPage('tabBar.html');
 });
 
-
-function LoginController($scope, $http, $window){
+function LoginController ($scope, $window, connectService){
 	
     $scope.login = function(id, password){
-    	
-        loginpath = 'http://137.189.97.77:8080/cgi/taketask_login.php';
-        
-        var validate_obj = {user:id, pass:password, action:"login"};
-		
-		ActivityIndicator.show("Loading");
-         
-        $http.post('http://137.189.97.77:8080/cgi/taketask_login.php',validate_obj,{timeout:30000})
-        .success(function(data){
-			ActivityIndicator.hide();
-            if (data.length == 32){
-                localStorage.setItem("userToken", data);
-                $scope.appNavi.resetToPage('tabBar.html');
-            }else if (data.length < 10)
-                alert(data + " is incorrect, please login again.");
-			else
-				alert("Connection Timeout. Please Check your network connection");
-        }).error(function(){
-			ActivityIndicator.hide();
-			alert("Connection Timeout. Please Check your network connection");
-		});
-        
+
+        connectService.login({user:id, pass:password}, function(){
+            $scope.appNavi.resetToPage('tabBar.html');
+        });
+
 	};
     
-    
     $scope.logout = function(){
-        $http.post('http://137.189.97.77:8080/cgi/taketask_login.php',{action:"logout", token:localStorage.getItem("userToken")});
-        localStorage.setItem("userToken", "");
-        appNavi.resetToPage('login.html');
+        connectService.logout(function(){
+            appNavi.resetToPage('login.html');
+        });
     }
-	
 }
 
 
-function JobListController($scope, $http, $window){
+
+function JobListController($scope, $window, connectService){
 	
 			 $scope.items = [1,2,3];
 			$scope.doRefresh = function() {
@@ -77,43 +58,28 @@ function JobListController($scope, $http, $window){
 	
 	refreshpage();
 	
+    
     function refreshpage(){
-		ActivityIndicator.show("Loading");
-		
-		$http.post('http://137.189.97.77:8080/cgi/taketask_login.php',{action:"renew", token:localStorage.getItem("userToken")},{timeout:30000})
-			.success(function(data){
+		connectService.connect('taketask_login.php',{action:"renew", token:localStorage.getItem("userToken")}, function ( data){
 				if (data.length == 32){
 					localStorage.setItem("userToken", data);
 					localStorage.setItem("require_auth","");
 					
-					$http.post('http://137.189.97.77:8080/cgi/getData.php',{token:localStorage.getItem("userToken")},{timeout:30000}).success(function(data){
+					connectService.connect('getData.php',{token:localStorage.getItem("userToken")}, function (data){
 						localStorage.setItem("jobList", angular.toJson(data));
 						$scope.joblist = data;
-						ActivityIndicator.hide();
-					}).error(function(){
-						ActivityIndicator.hide();
-						alert("Connection Timeout. Please Check your network connection");
+
 					});
 					
 				}else{
-					ActivityIndicator.hide();
 					alert("Please Login to Continue...");
 					appNavi.resetToPage('login.html');
 				}	
-			}).error(function(){
-					ActivityIndicator.hide();
-					alert("Connection Timeout. Please Check your network connection");
-			});
-			
-		
-        //data = '[{"jobID":"1","companyName":"Test Company 1","jobTitle":"Test Job","jobDescription":"For testing only","jobLocation":"CUHK","totalBudget":"100","jobDeadline":"2014-10-20 17:00:00"},{"jobID":"2","companyName":"Test Company 1","jobTitle":"Test job 2","jobDescription":"Test 2","jobLocation":"CUHK","totalBudget":"100","jobDeadline":"2014-11-24 00:00:00"}]';
- 
-        //for testing
-        //localStorage.setItem("userToken","db137ccbcc1a2261f78ae917ee270dbf");
-    };
-
+		});
+	};
 	
     $scope.refresh = refreshpage;
+	
     
     $scope.viewjob = function(job_num){
         
@@ -128,27 +94,6 @@ function JobListController($scope, $http, $window){
         appNavi.pushPage('detail.html');
     };
 	
-		function saveTask(){
-            var job_var = angular.fromJson(localStorage.getItem("last_job"));
-            
-            var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
-            var data = [job_var.jobID, localStorage.getItem("last_job"),localStorage.getItem("capturePic"),$scope.infotext,job_var.jobDeadline];
-            
-            
-            db.transaction(
-                function(tx) {
-                    tx.executeSql("CREATE TABLE IF NOT EXISTS bookmarked ('jobID' INT, 'job' TEXT, 'jobPhoto' TEXT, 'jobDescription' TEXT, 'jobDeadline' DateTime)");
-                    tx.executeSql("select * from bookmarked where jobID = ?",[data[0]], function(tx,rs){
-                        if (rs.rows.length > 0) 
-                            tx.executeSql("delete from bookmarked where jobID = ?",[data[0]]);
-                        tx.executeSql("insert into bookmarked values(?,?,?,?,?)",data);
-						localStorage.setItem("defaultPage","bookmark.html");
-                        appNavi.resetToPage('tabBar.html');
-                    });
-                }
-            );
-    
-    };
 }
 
 
@@ -309,10 +254,11 @@ function submitJobController($scope,$http){
 }
 
 
-	ActivityIndicator.show("Loading");
-function profileController($scope,$http){
+	
+function profileController($scope, connectService){
 	$scope.bkjob = 0;
 	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
+	
 	db.transaction(function(tx) {
 				
 				tx.executeSql("delete from bookmarked where jobDeadline <= datetime('now')",[],function(tx,result){
@@ -325,9 +271,7 @@ function profileController($scope,$http){
     });
 	
 	
-    $http.post('http://137.189.97.77:8080/cgi/taketask_login.php',{action:"show", token:localStorage.getItem("userToken")},{timeout:30000})
-        .success(function(data){
-			ActivityIndicator.hide();
+    connectService.connect('taketask_login.php',{action:"show", token:localStorage.getItem("userToken")},function(data){
             if (data == "Fail")
                 alert("There is a problem when retrieving your profile...");
             else{
@@ -337,15 +281,12 @@ function profileController($scope,$http){
                 $scope.userBalance = profile.balance;
                 $scope.completedJob = profile.completedJob;
             }
-    }).error(function(){
-			ActivityIndicator.hide();
-			alert("Connection Timeout. Please Check your network connection");
-	});
-	
-	
-	
+    });
 	
 }
+
+
+
 
 function bookmarkPageController($scope){
     $scope.bookmarkList = [];
@@ -385,6 +326,10 @@ function bookmarkPageController($scope){
         appNavi.pushPage('detail.html');
     };
 }
+
+
+
+
 
 function jobMapController($scope){
 
@@ -524,6 +469,10 @@ function MapViewController($scope){
 	
 }
 
+
+
+
+
 function dateController($scope){
 
    $scope.date = 31;
@@ -533,6 +482,8 @@ function dateController($scope){
         return new Array(num);   
    };
 }
+
+
 
 function popupController($scope,$ionicPopup,$timeout){
 	
