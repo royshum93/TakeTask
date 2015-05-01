@@ -5,24 +5,23 @@
     'use strict';
 
     angular.module('TakeTask.mapService', [])
-        .factory('locCheck', function ($q, $http) {
-            var googleAPIcall = function (page, callback) {
-                $http.get('http://maps.googleapis.com/maps/api/' + page)
-                    .success(function (data) {
-                        if (callback) { callback(data); }
-                    });
+        .factory('locationCheck', function ($q, $http) {
+            var googleAPIcall = function (page) {
+                return $http.get('http://maps.googleapis.com/maps/api/' + page);
             };
 
             return {
                 calulateDistance: function (startCoord, endCoord) {
                     var deferred = $q.defer();
-                    googleAPIcall("distancematrix/json?origins=" + startCoord + "&destinations=" + endCoord + "&sensor=true", function (result) {
+                    googleAPIcall("distancematrix/json?origins=" + startCoord + "&destinations=" + endCoord + "&sensor=true").then(function (result) {
                         if (result.status === "OK") {
                             deferred.resolve(result.row[0].elements[0].distance.value);
                         } else {
-                            deferred.reject(result.status);
+                            deferred.reject(result);
                         }
-                    });
+                    }, function (error) {
+						deferred.reject(error);
+					});
                     return deferred.promise;
                 },
                 getCoord: function () {

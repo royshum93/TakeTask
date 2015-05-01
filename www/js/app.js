@@ -2,7 +2,6 @@
         'use strict';
         angular.module('TakeTask', ['onsen', 'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.jobListController'])
         
-        //.controller('JobListController', ['$scope', '$window', 'connectService', 'taskDb', JobListController])
 		.controller('LoginController', ['$scope', '$window', 'connectService',LoginController])
 		.controller('showJobDetailController', showJobDetailController)
 		.controller('takePicJobController', takePicJobController)
@@ -41,76 +40,6 @@ function LoginController ($scope, $window, connectService){
         });
     }
 }
-
-
-
-/*function JobListController($scope, $window, connectService, taskDb){
-	
-			/* $scope.items = [1,2,3];
-			$scope.doRefresh = function() {
-			$http.get('/new-items')
-			 .success(function(newItems) {
-			   $scope.items = newItems;
-			 })
-			 .finally(function() {
-			   // Stop the ion-refresher from spinning
-			   $scope.$broadcast('scroll.refreshComplete');
-			 });
-		  };
-	
-	
-	refreshpage();
-    
-    function refreshpage(){
-		connectService.connect('taketask_login.php',{action:"renew", token:localStorage.getItem("userToken")}, function ( data){
-				if (data.length == 32){
-					localStorage.setItem("userToken", data);
-					localStorage.setItem("require_auth","");
-					
-					connectService.connect('getData.php',{token:localStorage.getItem("userToken")}, function (data){
-						localStorage.setItem("jobList", angular.toJson(data));
-						$scope.joblist = data;
-
-					});
-					
-				}else{
-					alert("Please Login to Continue...");
-					appNavi.resetToPage('login.html');
-				}	
-		});
-	};
-	
-    $scope.refresh = refreshpage;
-	
-    
-    $scope.viewjob = function(job_num){
-        
-        for (i=0; i< $scope.joblist.length; i++){
-            if ($scope.joblist[i].jobID == job_num){
-                localStorage.setItem("last_job", angular.toJson($scope.joblist[i]));
-            }
-        }
-        
-        localStorage.setItem("capturePic","");
-		localStorage.setItem("info_text","");
-        appNavi.pushPage('detail.html');
-    };
-	
-    
-    $scope.saveTask = function(job_num){
-            var job_var, i;
-            
-            for (i=0; i< $scope.joblist.length; i++){
-                if ($scope.joblist[i].jobID == job_num){
-                    job_var = angular.toJson($scope.joblist[i]);
-                    break;
-                }
-            }
-            alert(job_var);
-            if (taskDb.exist(job_var.jobID) == false)
-                taskDb.saveTask(job_var.jobID, job_var, "", "", $scope.joblist[i].jobDeadline);
-    };
-}*/
 
 
 function showJobDetailController($scope){

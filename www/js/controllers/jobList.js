@@ -4,8 +4,9 @@
 (function () {
     'use strict';
 
-    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection'])
-        .controller('JobListController', function ($scope, $window, connectService) {
+    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection', 'TakeTask.mapService'])
+
+		.controller('JobListController', function ($scope, $window, connectService, locationCheck) {
             var refreshpage = function () {
                     connectService.connect('taketask_login.php', {action: "renew", token: localStorage.getItem("userToken") }, function (data) {
                         if (data.length === 32) {
@@ -14,6 +15,17 @@
                             connectService.connect('getData.php', {token: localStorage.getItem("userToken")}, function (data) {
                                 localStorage.setItem("jobList", angular.toJson(data));
                                 $scope.joblist = data;
+
+								locationCheck.getCoord().then(function (result) {
+									$window.alert(result);
+									angular.forEach($scope.joblist, function (job) {
+										locationCheck.calulateDistance(result, job.jobCoordinates).then( function (distance) {
+											$window.alert(distance);
+										}, function (error) {
+											$window.alert(angular.toJson(error));
+										});
+									});
+								});
                             });
                         } else {
                             $window.alert("Please Login to Continue...");
