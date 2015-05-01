@@ -1,18 +1,22 @@
 (function(){
-            'use strict';
-            var app = angular.module('TakeTask', ['onsen', 'TakeTask.connection']);
-			app.controller('JobListController', ['$scope', '$window', 'connectService', JobListController]);
-			app.controller('LoginController', ['$scope', '$window', 'connectService',LoginController]);
-			app.controller('showJobDetailController', showJobDetailController);
-			app.controller('takePicJobController', takePicJobController);
-			app.controller('submitJobController', submitJobController);
-			app.controller('bookmarkPageController', bookmarkPageController);
-			app.controller('profileController', ['$scope', 'connectService',profileController]);
-			app.controller('jobMapController', jobMapController);
-			app.controller('MapViewController', MapViewController);
-			app.controller('dateController', dateController);
-			app.controller('popupController', popupController);
-			app.controller('ItemController', ItemController);
+        'use strict';
+        angular.module('TakeTask', ['onsen', 'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.jobListController'])
+        
+        //.controller('JobListController', ['$scope', '$window', 'connectService', 'taskDb', JobListController])
+		.controller('LoginController', ['$scope', '$window', 'connectService',LoginController])
+		.controller('showJobDetailController', showJobDetailController)
+		.controller('takePicJobController', takePicJobController)
+		.controller('submitJobController', submitJobController)
+		.controller('bookmarkPageController', ['$scope', 'taskDb', bookmarkPageController])
+		.controller('profileController', ['$scope', 'connectService',profileController])
+		.controller('jobMapController', jobMapController)
+		.controller('MapViewController', MapViewController)
+		.controller('dateController', dateController)
+		.controller('popupController', popupController)
+		.controller('ItemController', ItemController)
+        .run(function(DB) {
+            DB.init();
+        });
 })();
 
 
@@ -40,9 +44,9 @@ function LoginController ($scope, $window, connectService){
 
 
 
-function JobListController($scope, $window, connectService){
+/*function JobListController($scope, $window, connectService, taskDb){
 	
-			 $scope.items = [1,2,3];
+			/* $scope.items = [1,2,3];
 			$scope.doRefresh = function() {
 			$http.get('/new-items')
 			 .success(function(newItems) {
@@ -55,9 +59,7 @@ function JobListController($scope, $window, connectService){
 		  };
 	
 	
-	
 	refreshpage();
-	
     
     function refreshpage(){
 		connectService.connect('taketask_login.php',{action:"renew", token:localStorage.getItem("userToken")}, function ( data){
@@ -94,7 +96,21 @@ function JobListController($scope, $window, connectService){
         appNavi.pushPage('detail.html');
     };
 	
-}
+    
+    $scope.saveTask = function(job_num){
+            var job_var, i;
+            
+            for (i=0; i< $scope.joblist.length; i++){
+                if ($scope.joblist[i].jobID == job_num){
+                    job_var = angular.toJson($scope.joblist[i]);
+                    break;
+                }
+            }
+            alert(job_var);
+            if (taskDb.exist(job_var.jobID) == false)
+                taskDb.saveTask(job_var.jobID, job_var, "", "", $scope.joblist[i].jobDeadline);
+    };
+}*/
 
 
 function showJobDetailController($scope){
@@ -288,10 +304,10 @@ function profileController($scope, connectService){
 
 
 
-function bookmarkPageController($scope){
+function bookmarkPageController($scope, taskDb){
     $scope.bookmarkList = [];
     
-	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
+	/*var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
 	
             
             db.transaction(function(tx) {
@@ -309,12 +325,17 @@ function bookmarkPageController($scope){
 					//alert("Error("+error.code+") :"+error.message);
 				});
 				
-            });
+            });*/
     
+    taskDb.all().then(function(resultArray){
+        angular.forEach(resultArray, function(result){
+            $scope.bookmarkList.push(angular.fromJson(result.job));
+        });
+    });
 	
     $scope.viewBookmarkedJob = function(id){
         
-         db.transaction(
+        /*db.transaction(
                 function(tx) {
                     tx.executeSql("select * from bookmarked where jobID = ?",[id],function(tx,result){
                         localStorage.setItem("last_job",result.rows.item(0).job);
@@ -322,6 +343,11 @@ function bookmarkPageController($scope){
                         $scope.infotext = localStorage.setItem("info_text", result.rows.item(0).jobDescription);
                         
                     });
+        });*/
+        taskDb.getById(id).then(function(result){
+            localStorage.setItem("last_job",result.rows.item(0).job);
+            localStorage.setItem("capturePic",result.rows.item(0).jobPhoto);
+            $scope.infotext = localStorage.setItem("info_text", result.rows.item(0).jobDescription);
         });
         appNavi.pushPage('detail.html');
     };

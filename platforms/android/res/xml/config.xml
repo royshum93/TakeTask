@@ -17,6 +17,12 @@
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
     <access origin="https://oauth.io" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
+    </feature>
     <name>TakeTask</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -29,4 +35,5 @@
     <preference name="KeepRunning" value="true" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackgroundColor" value="0xffffffff" />
+    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 </widget>

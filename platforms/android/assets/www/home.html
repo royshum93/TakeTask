@@ -19,10 +19,10 @@
 <ons-list>
       <ons-list-item class="list-item" ng-repeat="job in joblist">
       	<ons-carousel swipeable overscrollable style="height: 72px; width: 100%;" initial-index="1" auto-scroll>
-		<ons-carousel-item class="list-action-menu-left" ng-click="saveTask()">
+		<ons-carousel-item class="list-action-menu-left" ng-click="saveTask(job.jobID)">
 			<i class="ion-bookmark"></i> Bookmark
           </ons-carousel-item>
-          <ons-carousel-item class="list-action-item">
+          <ons-carousel-item class="list-action-item"  ng-click="viewjob(job.jobID)">
             <ons-row>
               <ons-col width="52px" style="padding: 10px 0 0 0;">
                 <div style="width: 45px; height: 45px; border-radius: px;"><img src="pics/freeiconmaker_4.png"></div>
@@ -41,10 +41,6 @@
 				
               </ons-col>
             </ons-row>
-          </ons-carousel-item>
-		   <ons-carousel-item class="list-action-menu-right" ng-click="appNavi.pushPage('detail.html')"">
-		   <i class="ion-checkmark"></i>Take task
-          </ons-carousel-item>
         </ons-carousel>
       </ons-list-item>
     </ons-list>
