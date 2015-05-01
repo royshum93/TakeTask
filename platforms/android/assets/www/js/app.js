@@ -1,8 +1,9 @@
 (function(){
         'use strict';
-        angular.module('TakeTask', ['onsen', 'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.jobListController'])
+        angular.module('TakeTask', ['onsen', 
+            'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 
+            'TakeTask.jobListController', 'TakeTask.PrefController'])
         
-		.controller('LoginController', ['$scope', '$window', 'connectService',LoginController])
 		.controller('showJobDetailController', showJobDetailController)
 		.controller('takePicJobController', takePicJobController)
 		.controller('submitJobController', submitJobController)
@@ -16,7 +17,7 @@
         .run(function(DB) {
             DB.init();
         });
-})();
+}());
 
 
 ons.ready(function(){
@@ -24,22 +25,6 @@ ons.ready(function(){
         appNavi.resetToPage('tabBar.html');
 });
 
-function LoginController ($scope, $window, connectService){
-	
-    $scope.login = function(id, password){
-
-        connectService.login({user:id, pass:password}, function(){
-            $scope.appNavi.resetToPage('tabBar.html');
-        });
-
-	};
-    
-    $scope.logout = function(){
-        connectService.logout(function(){
-            appNavi.resetToPage('login.html');
-        });
-    }
-}
 
 
 function showJobDetailController($scope){

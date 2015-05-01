@@ -4,9 +4,9 @@
 (function () {
     'use strict';
 
-    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection', 'TakeTask.mapService'])
+    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection', 'TakeTask.mapService', 'TakeTask.Notification'])
 
-		.controller('JobListController', function ($scope, $window, connectService, locationCheck) {
+        .controller('JobListController', function ($scope, $window, connectService, locationCheck, notificationService) {
             var refreshpage = function () {
                     connectService.connect('taketask_login.php', {action: "renew", token: localStorage.getItem("userToken") }, function (data) {
                         if (data.length === 32) {
@@ -16,16 +16,19 @@
                                 localStorage.setItem("jobList", angular.toJson(data));
                                 $scope.joblist = data;
 
-								locationCheck.getCoord().then(function (result) {
-									$window.alert(result);
-									angular.forEach($scope.joblist, function (job) {
-										locationCheck.calulateDistance(result, job.jobCoordinates).then( function (distance) {
-											$window.alert(distance);
-										}, function (error) {
-											$window.alert(angular.toJson(error));
-										});
-									});
-								});
+                                locationCheck.getCoord().then(function (result) {
+
+                                    angular.forEach($scope.joblist, function (job) {
+                                        locationCheck.calulateDistance(result, job.jobCoordinates).then(function (distance) {
+                                            if ((distance < 1500) && (notificationService.lastNotify() > 30)) {
+                                                $window.alert(notificationService.lastNotify());
+                                                notificationService.addNearTask(job, distance);
+                                            }
+                                        });
+                                    });
+
+                                });
+
                             });
                         } else {
                             $window.alert("Please Login to Continue...");

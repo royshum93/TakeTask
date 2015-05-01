@@ -15,11 +15,11 @@
 	  <div class="list list-inset">
 	  <label class="item item-input">
 		<i class="icon ion-android-mail placeholder-icon"></i>
-		<input type="text" placeholder="Email" ng-model="user" value="">
+		<input type="text" placeholder="Email" ng-model="loginData.user" value="">
 	  </label>
 	  <label class="item item-input">
 		<i class="icon ion-android-lock placeholder-icon"></i>
-		<input type="password" placeholder="Password" ng-model="pass" value="">
+		<input type="password" placeholder="Password" ng-model="loginData.pass" value="">
 	  </label>
 	</div>
 	
@@ -27,13 +27,13 @@
 
 		<div class="row">
 		  <div class="col col-70"><p style="color:white;"><label class="checkbox-light">
-		<input type="checkbox"> Remember Me</p>
+		<input type="checkbox" ng-model="loginData.remember"> Remember Me</p>
 		</label></div>
 		  <div class="col col-30"><p style="color:white; font-size:14px;" ng-click="appNavi.pushPage('fpw.html')">Forgot password?</div>
 		</div>
 		
        
-        <button class="logonsbutton logonsbutton--large" ng-click="login(user,pass)">Log In</button>
+        <button class="logonsbutton logonsbutton--large" ng-click="login(loginData.user,loginData.pass)">Log In</button>
          <br>
         <button class="logonsbutton logonsbutton--large" ng-click="appNavi.pushPage('signup.html')">Sign Up</button>
       </div>

@@ -48,9 +48,9 @@
                 if (callback) { callback(); }
             },
 
-			connect: function (page, data, callback) {
-				return connectServerPost(page, data, callback);
-			}
+            connect: function (page, data, callback) {
+                return connectServerPost(page, data, callback);
+            }
         };
 
     }]);

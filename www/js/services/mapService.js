@@ -7,7 +7,13 @@
     angular.module('TakeTask.mapService', [])
         .factory('locationCheck', function ($q, $http) {
             var googleAPIcall = function (page) {
-                return $http.get('http://maps.googleapis.com/maps/api/' + page);
+                var deferred = $q.defer();
+                $http.get('http://maps.googleapis.com/maps/api/' + page).then(function (result) {
+                    deferred.resolve(result.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
             };
 
             return {
@@ -15,13 +21,17 @@
                     var deferred = $q.defer();
                     googleAPIcall("distancematrix/json?origins=" + startCoord + "&destinations=" + endCoord + "&sensor=true").then(function (result) {
                         if (result.status === "OK") {
-                            deferred.resolve(result.row[0].elements[0].distance.value);
+                            if (result.rows[0].elements[0].distance.value === "undefined") {
+                                deferred.reject(result);
+                            } else {
+                                deferred.resolve(result.rows[0].elements[0].distance.value);
+                            }
                         } else {
-                            deferred.reject(result);
+                            deferred.resolve(result);
                         }
                     }, function (error) {
-						deferred.reject(error);
-					});
+                        deferred.reject(error);
+                    });
                     return deferred.promise;
                 },
                 getCoord: function () {
