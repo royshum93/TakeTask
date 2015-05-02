@@ -25,7 +25,6 @@
 
                     query += columns.join(',') + ')';
                     self.query(query);
-                    $window.alert('Table ' + table.name + ' initialized');
                 });
             };
 

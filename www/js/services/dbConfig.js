@@ -1,3 +1,5 @@
+/*global angular*/
+
 angular.module('TakeTask.config', [])
 .constant('DB_CONFIG', {
     name: 'TestTask1',
@@ -16,4 +18,12 @@ angular.module('TakeTask.config', [])
             ]
         }
     ]
+})
+.constant('NOTIFY_CONFIG', {
+    lnInterval: 30,
+    NOTIFY_CONFIG.nearDistance: 1500
+
+})
+.constant('OAUTH_CONFIG', {
+    publicKey: 'jL2XFF-yscMEV66uQDrwy4p3btU'
 });

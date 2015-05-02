@@ -5,8 +5,8 @@
 (function () {
     'use strict';
 
-    angular.module('TakeTask.ProfileController', [])
-        .controller('profileController', function ($scope, $window, connectService) {
+    angular.module('TakeTask.ProfileController', ['TakeTask.fbConnect'])
+        .controller('profileController', function ($scope, $window, connectService, fbConnectService) {
             $scope.bkjob = 0;
 
             connectService.connect('taketask_login.php', {action: "show", token: localStorage.getItem("userToken") }, function (data) {

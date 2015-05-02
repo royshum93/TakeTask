@@ -111,7 +111,6 @@ C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\tabBar.html \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\css\map_main.css \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\css\style.css \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\app.js \
-C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\connection.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\ionicapp.js \
@@ -121,10 +120,10 @@ C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\map2.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\markerwithlabel_packed.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services.js \
-C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\taskDbService.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\jobList.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\loginController.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\prefController.js \
+C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\profileController.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\connection.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\dbConfig.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\localNotification.js \

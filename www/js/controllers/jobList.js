@@ -4,9 +4,9 @@
 (function () {
     'use strict';
 
-    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection', 'TakeTask.mapService', 'TakeTask.Notification'])
+    angular.module('TakeTask.jobListController', ['onsen', 'TakeTask.connection', 'TakeTask.mapService', 'TakeTask.Notification', 'TakeTask.config'])
 
-        .controller('JobListController', function ($scope, $window, connectService, locationCheck, notificationService) {
+        .controller('JobListController', function ($scope, $window, connectService, locationCheck, notificationService, NOTIFY_CONFIG) {
             var refreshpage = function () {
                     connectService.connect('taketask_login.php', {action: "renew", token: localStorage.getItem("userToken") }, function (data) {
                         if (data.length === 32) {
@@ -20,8 +20,9 @@
 
                                     angular.forEach($scope.joblist, function (job) {
                                         locationCheck.calulateDistance(result, job.jobCoordinates).then(function (distance) {
-                                            if ((distance < 1500) && (notificationService.lastNotify() > 30)) {
-                                                $window.alert(notificationService.lastNotify());
+
+                                            if ((distance < NOTIFY_CONFIG.nearDistance) && (notificationService.lastNotify() > NOTIFY_CONFIG.lnInterval)) {
+                                                //$window.alert(notificationService.lastNotify());
                                                 notificationService.addNearTask(job, distance);
                                             }
                                         });

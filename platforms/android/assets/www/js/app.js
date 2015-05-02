@@ -2,13 +2,13 @@
         'use strict';
         angular.module('TakeTask', ['onsen', 
             'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 
-            'TakeTask.jobListController', 'TakeTask.PrefController'])
+            'TakeTask.jobListController', 'TakeTask.PrefController', 'TakeTask.ProfileController'])
         
 		.controller('showJobDetailController', showJobDetailController)
 		.controller('takePicJobController', takePicJobController)
 		.controller('submitJobController', submitJobController)
 		.controller('bookmarkPageController', ['$scope', 'taskDb', bookmarkPageController])
-		.controller('profileController', ['$scope', 'connectService',profileController])
+		//.controller('profileController', ['$scope', 'connectService',profileController])
 		.controller('jobMapController', jobMapController)
 		.controller('MapViewController', MapViewController)
 		.controller('dateController', dateController)
@@ -185,7 +185,7 @@ function submitJobController($scope,$http){
 
 
 	
-function profileController($scope, connectService){
+/*function profileController($scope, connectService){
 	$scope.bkjob = 0;
 	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
 	
@@ -215,7 +215,7 @@ function profileController($scope, connectService){
 	
 }
 
-
+*/
 
 
 function bookmarkPageController($scope, taskDb){
