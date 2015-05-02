@@ -43,8 +43,12 @@
             <div class="row">
                 <div class=".col-xs-4"> <button class="btn btn-primary">Connect with FB</button></div>
             </div>
+
         </div>
-				
+
+				<ul class="list-group" ng-repeat="fd in fds">
+              <li class="list-group-item">{{fd.name}}</li> 
+        </ul>
 
 
 </ons-page>

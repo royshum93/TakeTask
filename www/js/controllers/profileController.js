@@ -21,5 +21,13 @@
                 }
             });
 
+            $scope.connectfb = function () {
+                fbConnectService.init().then(function () {
+                    fbConnectService.getFdList().then(function (result) {
+                        $scope.fds = result;
+                        $scope.$apply();
+                    });
+                });
+            };
         });
 }());
