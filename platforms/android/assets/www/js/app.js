@@ -1,7 +1,7 @@
 (function(){
         'use strict';
         angular.module('TakeTask', ['onsen', 
-            'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 
+            'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 'TakeTask.SignUpController',
             'TakeTask.jobListController', 'TakeTask.PrefController', 'TakeTask.ProfileController'])
         
 		.controller('showJobDetailController', showJobDetailController)
@@ -21,7 +21,9 @@
 
 
 ons.ready(function(){
-	if (localStorage.getItem("userToken"))
+    var token = localStorage.getItem("userToken");
+    
+	if ((token) && (token.length > 0))
         appNavi.resetToPage('tabBar.html');
 });
 

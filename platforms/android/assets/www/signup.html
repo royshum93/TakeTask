@@ -10,7 +10,7 @@
 </div>
 
 
-	<form name="myForm" novalidate>
+	<form ng-controller="signUpController" name="myForm" novalidate ng-submit="addAC(email, password, user)">
 	
 
 	  <label class="item item-input item-stacked-label">
@@ -70,7 +70,7 @@
 	  </label>
 	  
 	  
-	</form>
+	
 	
 			<div class="p-container">
 					<label class="checkbox-assertive"><input type="checkbox" name="checkbox" checked><i></i>I agree to the <a href="#">Terms of Service</a></label>
@@ -78,4 +78,6 @@
 		<button type="submit" class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.user.$invalid || myForm.gender.$dirty && myForm.user.$invalid">
 		Sign Up
 		</button>
+
+	</form>
 		

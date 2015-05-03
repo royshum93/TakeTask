@@ -124,8 +124,10 @@ C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\jobLis
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\loginController.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\prefController.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\profileController.js \
+C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\controllers\signUpController.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\connection.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\dbConfig.js \
+C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\fbConnectOAuth.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\localNotification.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\mapService.js \
 C:\Users\Roy\Desktop\Taketask\platforms\android\assets\www\js\services\taskDbService.js \

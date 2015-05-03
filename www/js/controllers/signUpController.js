@@ -8,8 +8,22 @@
     angular.module('TakeTask.SignUpController', ['TakeTask.connection'])
         .controller('signUpController', function ($scope, $window, connectService) {
 
-            $scope.addAC = function () {
-                
+
+            $scope.addAC = function (email, pass, name) {
+                var data = {};
+                data.action = 'signup';
+                data.user = email;
+                data.pass = pass;
+                data.token = {dname : name};
+                $window.alert(angular.toJson(data));
+
+                connectService.connect('taketask_login.php', data, function (result) {
+                    if (result === 'true') {
+                        appNavi.popPage();
+                    } else {
+                        $window.alert('The account registration has failed.');
+                    }
+                });
             };
 
         });

@@ -34,10 +34,15 @@
                         } else {
                             $window.alert("Please Login to Continue...");
                             appNavi.resetToPage('login.html');
+                            localStorage.setItem("userToken", "");
                         }
                     });
                 },
                 i;
+
+            if ((!localStorage.getItem("userToken")) || (localStorage.getItem("userToken").length === 0)) {
+                appNavi.resetToPage("login.html");
+            }
 
             refreshpage();
             $scope.refresh = refreshpage;

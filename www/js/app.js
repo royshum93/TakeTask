@@ -21,7 +21,9 @@
 
 
 ons.ready(function(){
-	if (localStorage.getItem("userToken"))
+    var token = localStorage.getItem("userToken");
+    
+	if ((token) && (token.length > 0))
         appNavi.resetToPage('tabBar.html');
 });
 
