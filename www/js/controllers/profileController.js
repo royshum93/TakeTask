@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('TakeTask.ProfileController', ['TakeTask.fbConnect'])
+    angular.module('TakeTask.ProfileController', ['TakeTask.connection', 'TakeTask.fbConnect'])
         .controller('profileController', function ($scope, $window, connectService, fbConnectService) {
             $scope.bkjob = 0;
 
@@ -22,11 +22,15 @@
             });
 
             $scope.connectfb = function () {
+                $window.alert("connectfb");
+
                 fbConnectService.init().then(function () {
                     fbConnectService.getFdList().then(function (result) {
                         $scope.fds = result;
                         $scope.$apply();
                     });
+                }, function (error) {
+                    $window.alert("report error : " + error);
                 });
             };
         });

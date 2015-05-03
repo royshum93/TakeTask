@@ -19,10 +19,12 @@
                     if (code !== undefined) {
                         request.code = code;
                     }
-
-                    $http.get(oauthServerLocation, request).then(function (result) {
+                    $window.alert("request: " + angular.toJson(request));
+                    $http.post(oauthServerLocation, request).then(function (result) {
+                        $window.alert("server: " + angular.toJson(result));
                         deferred.resolve(result.data);
                     }, function (error) {
+                        $window.alert("server error: " + angular.toJson(error));
                         deferred.reject(error);
                     });
                     return deferred.promise;
@@ -36,14 +38,17 @@
                 init: function () {
                     var deferred = $q.defer();
 
-                    OAuth.initialize(OAUTH_CONFIG.publicKey);
-                    connectOAuth("check").then(function (result) {
+                    deferred.resolve(OAuth.initialize(OAUTH_CONFIG.publicKey));
+                    /*connectOAuth("check").then(function (result) {
                         //if token not in db, request stateCode and do auth request in client
                         if (result === false) {
                             connectOAuth("code").then(function (params) {
+
+                                $window.alert("fb before oauth: " + angular.toJson(params));
                                 OAuth.popup('facebook', {
                                     state: params.token
                                 }).done(function(result) {
+                                    $window.alert("fb oauth: " + angular.toJson(result));
                                     connectOAuth("auth", result.code).then(function (result) {
                                         if (result === true) {
                                             deferred.resolve();
@@ -61,18 +66,28 @@
                             deferred.resolve();
                         }
 
-                    });
+                    });*/
 
                     return deferred.promise;
                 },
 
                 getFdList: function () {
                     var deferred = $q.defer();
-                    connectOAuth("get", "/v2.3/me/friends").then(function (result) {
+                    OAuth.popup('facebook').done(function (result) {
+
+                        result.get('/me/friends').done(function (response) {
+                        //this will display "John Doe" in the console
+                            $window.alert(angular.toJson(response));
+                            deferred.resolve(response);
+                        });
+
+                    });
+
+                    /*connectOAuth("get", "/v2.3/me/friends").then(function (result) {
                         deferred.resolve(result.data);
                     }, function (error) {
                         deferred.reject(error);
-                    });
+                    });*/
                     return deferred.promise;
                 }
 

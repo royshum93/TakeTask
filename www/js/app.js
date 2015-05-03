@@ -1,7 +1,7 @@
 (function(){
         'use strict';
         angular.module('TakeTask', ['onsen', 
-            'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 
+            'TakeTask.connection', 'TakeTask.taskDb', 'TakeTask.LoginController', 'TakeTask.SignUpController',
             'TakeTask.jobListController', 'TakeTask.PrefController', 'TakeTask.ProfileController'])
         
 		.controller('showJobDetailController', showJobDetailController)

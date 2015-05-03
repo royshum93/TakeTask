@@ -5,7 +5,7 @@
     'use strict';
 
     angular.module('TakeTask.LoginController', ['onsen', 'TakeTask.connection'])
-        .controller('LoginController', function ($scope, $window, connectService) {
+        .controller('LoginController', function ($scope, connectService) {
             $scope.loginData = {};
 
             if (localStorage.getItem("savedUser") !== null) {
@@ -32,10 +32,5 @@
                 });
             };
 
-            $scope.logout = function () {
-                connectService.logout(function () {
-                    appNavi.resetToPage('login.html');
-                });
-            };
         });
 }());
