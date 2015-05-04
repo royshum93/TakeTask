@@ -32,20 +32,17 @@
 	
 		<ons-list-header>Balance</ons-list-header>
 		
-        <div class="container">
+        
             <div class="row">
-                <div class=".col-xs-4"> <h3>  {{userBalance | currency}} </h3></div>
-                <div class=".col-xs-4"> <button class="button button-energized">Withdraw</button></div>
+                <div class="col col-70"> <h3>  {{userBalance | currency}} </h3></div>
+                <div class="col"> <button class="button button-energized">Withdraw</button></div>
             </div>
 
-            <br/>
-
+		<ons-list-header>Friends</ons-list-header>
             <div class="row">
                 <div class=".col-xs-4"> <button class="btn btn-primary" ng-click="connectfb()">Connect with FB</button></div>
             </div>
-
-        </div>
-
+		
 				<ul class="list-group" ng-repeat="fd in fds">
               <li class="list-group-item">{{fd.name}}</li> 
         </ul>

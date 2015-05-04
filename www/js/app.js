@@ -7,7 +7,7 @@
 		.controller('showJobDetailController', showJobDetailController)
 		.controller('takePicJobController', takePicJobController)
 		.controller('submitJobController', submitJobController)
-		.controller('bookmarkPageController', ['$scope', 'taskDb', bookmarkPageController])
+		.controller('bookmarkPageController', ['$scope', bookmarkPageController])
 		//.controller('profileController', ['$scope', 'connectService',profileController])
 		.controller('jobMapController', jobMapController)
 		.controller('MapViewController', MapViewController)
@@ -65,7 +65,8 @@ function showJobDetailController($scope){
 
 
 function takePicJobController($scope){
-     
+		$scope.current_job =  angular.fromJson(localStorage.getItem("last_job"));
+		
         if (localStorage.getItem("capturePic")){
             document.getElementById("previewImage").innerHTML = '<img style="width: 100%; height: 100%" src='+"data:image/jpeg;base64," +localStorage.getItem("capturePic")+">";
 			document.getElementById("previewImageSize").innerHTML = "Image Size: ~" + Math.round(localStorage.getItem("capturePic").length / 1024) + "Kb";
@@ -99,7 +100,8 @@ function takePicJobController($scope){
 
 
 function submitJobController($scope,$http){
-    
+    $scope.current_job = angular.fromJson(localStorage.getItem("last_job"));
+	
     if (localStorage.getItem("info_text"))
         $scope.infotext = localStorage.getItem("info_text");
     
@@ -220,10 +222,10 @@ function submitJobController($scope,$http){
 */
 
 
-function bookmarkPageController($scope, taskDb){
+function bookmarkPageController($scope){
     $scope.bookmarkList = [];
     
-	/*var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
+	var db = window.openDatabase('TestTask1', '0.1', 'bookmarked', 65535);
 	
             
             db.transaction(function(tx) {
@@ -241,17 +243,17 @@ function bookmarkPageController($scope, taskDb){
 					//alert("Error("+error.code+") :"+error.message);
 				});
 				
-            });*/
+            });
     
-    taskDb.all().then(function(resultArray){
+    /*taskDb.all().then(function(resultArray){
         angular.forEach(resultArray, function(result){
             $scope.bookmarkList.push(angular.fromJson(result.job));
         });
-    });
+    });*/
 	
     $scope.viewBookmarkedJob = function(id){
         
-        /*db.transaction(
+        db.transaction(
                 function(tx) {
                     tx.executeSql("select * from bookmarked where jobID = ?",[id],function(tx,result){
                         localStorage.setItem("last_job",result.rows.item(0).job);
@@ -259,12 +261,13 @@ function bookmarkPageController($scope, taskDb){
                         $scope.infotext = localStorage.setItem("info_text", result.rows.item(0).jobDescription);
                         
                     });
-        });*/
-        taskDb.getById(id).then(function(result){
+        });
+        
+		/*taskDb.getById(id).then(function(result){
             localStorage.setItem("last_job",result.rows.item(0).job);
             localStorage.setItem("capturePic",result.rows.item(0).jobPhoto);
             $scope.infotext = localStorage.setItem("info_text", result.rows.item(0).jobDescription);
-        });
+        });*/
         appNavi.pushPage('detail.html');
     };
 }
@@ -273,7 +276,7 @@ function bookmarkPageController($scope, taskDb){
 
 
 
-function jobMapController($scope){
+function jobMapController($scope, $window){
 
 	var position = {};
 	
@@ -283,7 +286,6 @@ function jobMapController($scope){
 		position = { coords: {latitude: "22.4212272", longitude: "114.2099545"}};
 	}
 		
-	
 	var location = angular.fromJson(localStorage.getItem("last_job")).jobCoordinates.split(",");
 	initializeMap(eval(location[0]),eval(location[1]));
 

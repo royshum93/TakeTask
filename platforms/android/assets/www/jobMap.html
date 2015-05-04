@@ -2,16 +2,18 @@
 
 <ons-page ng-controller="jobMapController">
 
-	<div class="navigation-bar navigation-bar--android">
+<div class="navigation-bar navigation-bar--android">
   <div class="navigation-bar__left navigation-bar--android__left">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0 5px 0 5px;"></span>
   </div>
+  
   <div class="navigation-bar__center navigation-bar--android__center">
     <span class="toolbar-button navigation-bar__line-height" style="padding:0">
-      <i class="ion-chervon-left" style="font-size:20px;"></i> <ons-back-button>Location</ons-back-button>
+       <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.popPage()">Location</i>
     </span>
   </div>
 </div>
+
 
 	  
 	  <div style="height: 100%;width: 100%;" id="mapDiv1"></div>

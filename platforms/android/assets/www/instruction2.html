@@ -5,28 +5,24 @@
 		  </div>
 		  <div class="navigation-bar__center navigation-bar--android__center">
 			<span class="toolbar-button navigation-bar__line-height" style="padding:0">
-			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.pushPage('instruction.html')".></i>{{current_job.jobTitle}}
+			  <i class="ion-chevron-left" style="font-size:20px;" ng-click="appNavi.popPage()">{{current_job.jobTitle}}</i>
 			</span>
 		  </div>
 		</div>
       
 	  
-	  <div class="list list-inset">
-		  <label class="item item-input">
-			<input type="text" placeholder="First Name">
-		  </label>
-		  <label class="item item-input">
-			<input type="text" placeholder="Last Name">
-		  </label>
-		</div>
-	  
+
 	  
 	  
       <div class="center">
           Second, please fill in the number shown in the price tag.
-          <br></br>
-          <input type="text" class="number" placeholder="price" ng-model="infotext">
-<br>
+          <br></br>	  
+		  <div class="list list-inset">
+		  <label class="item item-input">
+			<input type="text" placeholder="Price" ng-model="infotext">
+		  </label>
+		</div>
+	  
       </div>
       <button class="onsbutton onsbutton--large" style="position:absolute; bottom:0px" ng-click="submitJob()">Submit</button>
     
