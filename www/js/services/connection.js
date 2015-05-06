@@ -11,7 +11,7 @@
 
     connection.factory('connectService', ['$http', '$window', function ($http, $window) {
 
-        var server_url = "http://137.189.97.77:8080/cgi/",
+        var server_url = "http://137.189.97.77:8080/",
             timeoutMsg = function () {
                 $window.alert("Connection Timeout. Please Check your network connection");
             },
@@ -21,8 +21,9 @@
                     .success(function (data) {
                         ActivityIndicator.hide();
                         if (callback) { callback(data); }
-                    }).error(function () {
+                    }).error(function (error) {
                         ActivityIndicator.hide();
+                        $window.alert(error);
                         timeoutMsg();
                     });
             };
@@ -32,7 +33,7 @@
 
             login : function (login_data, callback) {
                 login_data.action = "login";
-                connectServerPost('taketask_login.php', login_data, function (data) {
+                connectServerPost('cgi/taketask_login.php', login_data, function (data) {
                     if (data.length === 32) {
                         localStorage.setItem("userToken", data);
                         if (callback) { callback(); }
@@ -49,7 +50,11 @@
             },
 
             connect: function (page, data, callback) {
-                return connectServerPost(page, data, callback);
+                return connectServerPost('cgi/' + page, data, callback);
+            },
+
+            connectOAuth: function (page, data, callback) {
+                return connectServerPost('oauth/' + page, data, callback);
             }
         };
 

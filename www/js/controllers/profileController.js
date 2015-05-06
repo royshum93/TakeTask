@@ -1,7 +1,7 @@
 /*global angular*/
 /*global appNavi*/
 /*global localStorage*/
-
+/*global navigator*/
 (function () {
     'use strict';
 
@@ -33,5 +33,33 @@
                     $window.alert("report error : " + error);
                 });
             };
+
+            $scope.withdraw = function () {
+
+                navigator.notification.prompt('Enter Points to withdraw', function (results) {
+                    if (results.buttonIndex === 2) {
+                        return;
+                    }
+
+                    if ((results.input1 === '') || (isFinite(results.input1) === false) || (parseInt(results.input1, 10) > $scope.userBalance)) {
+                        $window.alert('Please check the amount to withdraw is valid.');
+                        return;
+                    }
+
+                    var data = {};
+                    data.token = localStorage.getItem('userToken');
+                    data.amount = parseInt(results.input1, 10);
+
+                    connectService.connectOAuth('testPaypal.php', data, function (result) {
+                        if (result.status === true) {
+                            $window.alert('Converted ' + result.point + ' points to USD$' + result.money + ' in your PayPal account. Enjoy!');
+                        } else {
+                            $window.alert('There is an error. Status: ' + result.status);
+                        }
+                    });
+                }, 'Withdraw');
+
+            };
+
         });
 }());

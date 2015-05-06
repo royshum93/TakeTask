@@ -15,7 +15,6 @@
                 data.user = email;
                 data.pass = pass;
                 data.token = {dname : name};
-                $window.alert(angular.toJson(data));
 
                 connectService.connect('taketask_login.php', data, function (result) {
                     if (result === 'true') {
