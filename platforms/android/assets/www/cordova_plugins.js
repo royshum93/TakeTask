@@ -51,20 +51,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.dialogs/www/notification.js",
-        "id": "org.apache.cordova.dialogs.notification",
-        "merges": [
-            "navigator.notification"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.dialogs/www/android/notification.js",
-        "id": "org.apache.cordova.dialogs.notification_android",
-        "merges": [
-            "navigator.notification"
-        ]
-    },
-    {
         "file": "plugins/com.oauthio.plugins.oauthio/www/dist/oauth.js",
         "id": "com.oauthio.plugins.oauthio.OAuth",
         "merges": [
@@ -96,6 +82,34 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.dataforpeople.plugins.gpssettings/www/GpsSettings.js",
+        "id": "com.dataforpeople.plugins.gpssettings.GpsSettings",
+        "clobbers": [
+            "window.plugins.GpsSettings"
+        ]
+    },
+    {
+        "file": "plugins/de.fastr.phonegap.plugins.CheckGPS/www/CheckGPS.js",
+        "id": "de.fastr.phonegap.plugins.CheckGPS.CheckGPS",
+        "clobbers": [
+            "CheckGPS"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+        "id": "cordova-plugin-dialogs.notification_android",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "clobbers": [
@@ -116,12 +130,14 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.3.3",
     "org.apache.cordova.plugin.ActivityIndicator": "1.0.0",
     "org.apache.cordova.network-information": "0.2.13",
-    "org.apache.cordova.geolocation": "0.3.10",
-    "org.apache.cordova.dialogs": "0.2.10",
     "com.oauthio.plugins.oauthio": "0.2.4",
     "de.appplant.cordova.plugin.local-notification": "0.8.2dev",
+    "com.dataforpeople.plugins.gpssettings": "1.0.1",
+    "de.fastr.phonegap.plugins.CheckGPS": "0.9.8",
+    "cordova-plugin-dialogs": "1.1.1-dev",
     "org.apache.cordova.inappbrowser": "0.6.0",
-    "org.apache.cordova.device": "0.3.0"
+    "org.apache.cordova.device": "0.3.0",
+    "org.apache.cordova.geolocation": "0.3.12"
 }
 // BOTTOM OF METADATA
 });

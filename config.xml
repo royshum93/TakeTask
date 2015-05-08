@@ -13,5 +13,4 @@
 	<preference name="DisallowOverscroll" value="true"/>
 	<preference name="BackgroundColor" value="0xffffffff"/>
     
-    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 </widget>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="com.dataforpeople.plugins.gpssettings" version="1.0.1">
+        <name>GPS Settings</name>
+        <description>Display the location settings page</description>
+        <license>Apache 2.0</license>
+        <keywords>gps, localisation, settings</keywords>
+
+        <js-module src="www/GpsSettings.js" name="GpsSettings">
+            <clobbers target="window.plugins.GpsSettings" />
+        </js-module>
+
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="GpsSettings" >
+                    <param name="android-package" value="com.dataforpeople.plugins.GpsSettings"/>
+                </feature>
+            </config-file>
+
+            <source-file src="src/android/com/dataforpeople/plugins/GpsSettings.java" target-dir="src/com/dataforpeople/plugins/" />
+        </platform>
+    </plugin>

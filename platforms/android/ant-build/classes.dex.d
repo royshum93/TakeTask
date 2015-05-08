@@ -1,4 +1,5 @@
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes.dex : \
+C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\com\dataforpeople\plugins\GpsSettings.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\com\royellie\fyp\taketask\BuildConfig.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\com\royellie\fyp\taketask\R$anim.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\com\royellie\fyp\taketask\R$attr.class \
@@ -30,6 +31,7 @@ C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\de\appplant\co
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\de\appplant\cordova\plugin\notification\Notification.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\de\appplant\cordova\plugin\notification\Options.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\de\appplant\cordova\plugin\notification\TriggerReceiver.class \
+C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\de\fastr\phonegap\plugins\CheckGPS.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
 C:\Users\Roy\Desktop\Taketask\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \

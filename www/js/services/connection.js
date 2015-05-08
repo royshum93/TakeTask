@@ -23,7 +23,6 @@
                         if (callback) { callback(data); }
                     }).error(function (error) {
                         ActivityIndicator.hide();
-                        $window.alert(error);
                         timeoutMsg();
                     });
             };

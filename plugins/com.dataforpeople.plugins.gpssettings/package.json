@@ -1,0 +1,16 @@
+{
+    "version": "1.0.1",
+    "name": "com.dataforpeople.plugins.gpssettings",
+    "cordova_name": "GPS Settings",
+    "description": "Display the location settings page",
+    "license": "Apache 2.0",
+    "keywords": [
+        "gps",
+        " localisation",
+        " settings"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": []
+}

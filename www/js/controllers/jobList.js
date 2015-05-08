@@ -28,6 +28,8 @@
                                         });
                                     });
 
+                                }, function (error) {
+                                    $window.alert(error);
                                 });
 
                             });
@@ -37,8 +39,7 @@
                             localStorage.setItem("userToken", "");
                         }
                     });
-                },
-                i;
+                };
 
             if ((!localStorage.getItem("userToken")) || (localStorage.getItem("userToken").length === 0)) {
                 appNavi.resetToPage("login.html");
@@ -48,15 +49,22 @@
             $scope.refresh = refreshpage;
 
             $scope.viewjob = function (job_num) {
-                for (i = 0; i < $scope.joblist.length; i += 1) {
-                    if ($scope.joblist[i].jobID === job_num) {
-                        localStorage.setItem("last_job", angular.toJson($scope.joblist[i]));
+                angular.forEach($scope.joblist, function(job) {
+                    if (job.jobID === job_num) {
+                        locationCheck.isNear(job.jobCoordinates).then(function (valid) {
+                            if (valid || NOTIFY_CONFIG.GPS_ignoreLocation) {
+                                localStorage.setItem("last_job", angular.toJson(job));
+                                localStorage.setItem("capturePic", "");
+                                localStorage.setItem("info_text", "");
+                                appNavi.pushPage('detail.html');
+                            } else {
+                                $window.alert('Error: Location mismatch.');
+                            }
+                        }, function (error) {
+                            $window.alert(error);
+                        });
                     }
-                }
-
-                localStorage.setItem("capturePic", "");
-                localStorage.setItem("info_text", "");
-                appNavi.pushPage('detail.html');
+                });
             };
 
 

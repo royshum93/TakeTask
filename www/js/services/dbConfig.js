@@ -22,7 +22,23 @@ angular.module('TakeTask.config', [])
 
     .constant('NOTIFY_CONFIG', {
         lnInterval: 30,
-        nearDistance: 1500
+        nearDistance: 1500,
+        GPS_ignoreLocation: true
+    })
+
+    .constant('TASK_CONFIG', {
+        validDistance: 20,
+        MSG_GPS_TIMEOUT: 'GPS tracking timeout!',
+        MSG_GPS_NOTAVAIL: 'Please ensure that location Service is enabled before proceed.',
+
+        MSG_GPS_PROMPT_TITLE: 'Turn on GPS',
+        MSG_GPS_PROMPT_TEXT: 'Turning on GPS is required for TakeTask.',
+        MSG_GPS_PROMPT_GOSETTING: 'Goto Setting',
+        MSG_GPS_PROMPT_CANCEL: 'Cancel',
+
+        GPS_enableHighAccuracy: true,
+        GPS_timeout: 5000,
+        GPS_maximumAge: 2000
     })
 
     .constant('OAUTH_CONFIG', {
