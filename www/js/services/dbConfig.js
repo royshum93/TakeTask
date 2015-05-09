@@ -33,7 +33,7 @@ angular.module('TakeTask.config', [])
 
         MSG_GPS_PROMPT_TITLE: 'Turn on GPS',
         MSG_GPS_PROMPT_TEXT: 'Turning on GPS is required for TakeTask.',
-        MSG_GPS_PROMPT_GOSETTING: 'Goto Setting',
+        MSG_GPS_PROMPT_GOSETTING: 'Go to Setting',
         MSG_GPS_PROMPT_CANCEL: 'Cancel',
 
         GPS_enableHighAccuracy: true,

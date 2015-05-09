@@ -38,18 +38,15 @@
                 init: function () {
                     var deferred = $q.defer();
 
-                    deferred.resolve(OAuth.initialize(OAUTH_CONFIG.publicKey));
-                    /*connectOAuth("check").then(function (result) {
+                    OAuth.initialize(OAUTH_CONFIG.publicKey);
+                    connectOAuth("check").then(function (result) {
                         //if token not in db, request stateCode and do auth request in client
                         if (result === false) {
                             connectOAuth("code").then(function (params) {
-
-                                $window.alert("fb before oauth: " + angular.toJson(params));
                                 OAuth.popup('facebook', {
                                     state: params.token
-                                }).done(function(result) {
-                                    $window.alert("fb oauth: " + angular.toJson(result));
-                                    connectOAuth("auth", result.code).then(function (result) {
+                                }).done(function(fbresult) {
+                                    connectOAuth("auth", fbresult.code).then(function (result) {
                                         if (result === true) {
                                             deferred.resolve();
                                         } else {
@@ -66,14 +63,14 @@
                             deferred.resolve();
                         }
 
-                    });*/
+                    });
 
                     return deferred.promise;
                 },
 
                 getFdList: function () {
                     var deferred = $q.defer();
-                    OAuth.popup('facebook').done(function (result) {
+                    /*OAuth.popup('facebook').done(function (result) {
 
                         result.get('/me/friends').done(function (response) {
                         //this will display "John Doe" in the console
@@ -81,13 +78,13 @@
                             deferred.resolve(response);
                         });
 
-                    });
+                    });*/
 
-                    /*connectOAuth("get", "/v2.3/me/friends").then(function (result) {
-                        deferred.resolve(result.data);
+                    connectOAuth("fdlist").then(function (data) {
+                        deferred.resolve(data);
                     }, function (error) {
                         deferred.reject(error);
-                    });*/
+                    });
                     return deferred.promise;
                 }
 

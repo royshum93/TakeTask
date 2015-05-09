@@ -8,6 +8,8 @@
     angular.module('TakeTask.ProfileController', ['TakeTask.connection', 'TakeTask.fbConnect'])
         .controller('profileController', function ($scope, $window, connectService, fbConnectService) {
             $scope.bkjob = 0;
+            $scope.fds = [];
+            $scope.hideFBbtn = localStorage.getItem("AutoFb") == 1;
 
             connectService.connect('taketask_login.php', {action: "show", token: localStorage.getItem("userToken") }, function (data) {
                 if (data === "Fail") {
@@ -21,13 +23,24 @@
                 }
             });
 
-            $scope.connectfb = function () {
-                $window.alert("connectfb");
-
+            if ($scope.hideFBbtn === true) {
                 fbConnectService.init().then(function () {
                     fbConnectService.getFdList().then(function (result) {
                         $scope.fds = result;
-                        $scope.$apply();
+                    });
+                });
+            }
+
+            $scope.connectfb = function () {
+                $window.alert("connectfb");
+                localStorage.setItem("AutoFb", 1);
+
+                fbConnectService.init().then(function () {
+                    fbConnectService.getFdList().then(function (result) {
+                        $window.alert(result);
+                        $scope.fds = result;
+                    }, function (error) {
+                        $window.alert("report error : " + error);
                     });
                 }, function (error) {
                     $window.alert("report error : " + error);

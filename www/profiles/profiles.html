@@ -40,12 +40,18 @@
 
 		<ons-list-header>Friends</ons-list-header>
 
-<div style="padding-left:32%; padding-top:30%;"><button class="btn btn-primary" ng-click="connectfb()">Connect with FB</button></div>
+<div ng-hide="hideFBbtn" style="padding-left:32%; padding-top:30%;"><button class="btn btn-primary" ng-click="connectfb()">Connect with FB</button></div>
 
 		
-				<ul class="list-group" ng-repeat="fd in fds">
-              <li class="list-group-item">{{fd.name}}</li> 
-        </ul>
+  <div class="list" ng-hide="!hideFBbtn" ng-repeat="fd in fds">
+
+    <a class="item item-avatar" href="#">
+      <img src="{{fd.fbProfilePic}}">
+      <h2>{{fd.fbDisplayName}}</h2>
+      <p>Points: {{fd.balance}}</p>
+    </a>
+
+</div>
 
 
 </ons-page>
